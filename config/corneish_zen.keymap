@@ -7,7 +7,8 @@
 #define BASE 0
 #define NUMBERS 1
 #define SYMBOLS 2
-#define SETTING 3
+#define CSGO 3
+#define SETTING 4
 
 / {
     chosen {
@@ -29,14 +30,15 @@
         combo_Settings {
             timeout-ms = <50>;
             key-positions = <13 14 15 16>;
-            bindings = <&tog 3>;
+            bindings = <&tog 4>;
                        };
            };
     };
     
-// Hold-tap duration
+// Hold-tap behaviors
 &mt {
     tapping-term-ms = <200>;
+    quick-tap-ms = <100>
 };
 
 /{
@@ -95,6 +97,23 @@
             >;
         };
 
+        csgo_layer {
+            label = "CSGO";
+
+            // -----------------------------------------------------------------------------------------
+            // | ESC |  1  |  2  |  3  |  4  |  5  |   |VOLUP| F1  | F2  |     |     | DEF |
+            // |LSHFT|LEFT | UP  |RIGHT|  F  |  G  |   |VOLDN|     |     |     |     | DEF |
+            // |LCTRL|  Q  |DOWN |  B  |  R  |  T  |   |VMUTE|     |     |     |     | DEF |
+            //                   |  E  |SPACE| TAB |   |CSGO |CSGO |CSGO |
+
+            bindings = <
+&kp ESC     &kp N1    &kp N2    &kp N3     &kp N4  &kp N5      &kp C_VOL_UP  &kp F1  &kp F2  &none  &none  &tog 0
+&kp LSHIFT  &kp LEFT  &kp UP    &kp RIGHT  &kp F   &kp G       &kp C_VOL_DN  &none  &none    &none  &none  &tog 0
+&kp LCTRL   &kp Q     &kp DOWN  &kp B      &kp R   &kp T       &kp C_MUTE    &none  &none    &none  &none  &tog 0
+                               &kp E  &kp SPACE  &kp TAB       &tog 3  &tog 3  &tog 3
+            >;
+        };
+
         setting_layer {
             label = "SETTING";
             
@@ -106,9 +125,9 @@
             
             bindings = <
 &tog 0  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4      &none  &none  &none  &none  &none  &none
-&tog 0  &tog 3        &tog 3        &tog 3        &tog 3        &tog 3            &none  &out OUT_TOG  &out OUT_BLE  &out OUT_USB  &none  &none
+&tog 0  &tog 4        &tog 4        &tog 4        &tog 4        &tog 4            &none  &out OUT_TOG  &out OUT_BLE  &out OUT_USB  &none  &none
 &tog 0  &none         &none         &none         &none         &none             &none  &none  &none  &none  &none  &none
-                                      &bt BT_CLR    &bt BT_CLR    &bt BT_CLR      &tog 3  &tog 3  &tog 3
+                                      &bt BT_CLR    &bt BT_CLR    &bt BT_CLR      &tog 4  &tog 4  &tog 4
             >;
         };
     };
