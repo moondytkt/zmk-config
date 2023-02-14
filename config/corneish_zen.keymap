@@ -38,7 +38,7 @@
 // Hold-tap behaviors
 &mt {
     tapping-term-ms = <200>;
-    quick-tap-ms = <100>
+    quick-tap-ms = <100>;
 };
 
 /{
