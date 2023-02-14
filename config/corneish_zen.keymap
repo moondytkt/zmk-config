@@ -14,15 +14,18 @@
     combos {
         compatible = "zmk,combos";
 
-        Escape {
-            bindings = <&kp ESC>;
+        combo_Escape {
+            timeout-ms = <50>;
             key-positions = <1 2 3>;
-        };
-
-        Toggle_Settings {
-            bindings = <&tog 3>;
+            bindings = <&kp ESC>;
+                     };
+        
+        combo_Settings {
+            timeout-ms = <50>;
             key-positions = <13 14 15 16>;
-        };
+            bindings = <&tog 3>;
+                       };
+           };
     };
 
     keymap {
