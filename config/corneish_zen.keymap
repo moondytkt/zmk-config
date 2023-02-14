@@ -4,7 +4,6 @@ ESCAPE/*
 * SPDX-License-Identifier: MIT
 *
 */
-
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
@@ -21,9 +20,14 @@ ESCAPE/*
     combos {
         compatible = "zmk,combos";
 
+        Escape {
+            bindings = <&kp ESC>;
+            key-positions = <1 2 3>;
+        };
+
         Toggle_Settings {
             bindings = <&tog 3>;
-            key-positions = <1 2 3>;
+            key-positions = <13 14 15 16>;
         };
     };
 
@@ -40,10 +44,10 @@ ESCAPE/*
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-  &kp DEL  &kp Q  &kp W   &kp E                   &kp R                &kp T          &kp Y            &kp U      &kp I    &kp O     &kp P  &kp RA(RS(RCTRL))
- &kp CAPS  &kp A  &kp S   &kp D                   &kp F                &kp G          &kp H            &kp J      &kp K    &kp L  &kp SEMI            &kp SQT
-&kp LSHFT  &kp Z  &kp X   &kp C                   &kp V                &kp B          &kp N            &kp M  &kp COMMA  &kp DOT  &kp FSLH          &kp RSHFT
-                         &tog 1  &kp SPACE  &mt LGUI BACKSPACE  &mt RALT TAB  &mt RCTRL ENTER     &tog 2
+        &kp DEL  &kp Q  &kp W   &kp E      &kp R               &kp T         &kp Y            &kp U      &kp I    &kp O     &kp P  &kp RA(RS(RCTRL))
+       &kp CAPS  &kp A  &kp S   &kp D      &kp F               &kp G         &kp H            &kp J      &kp K    &kp L  &kp SEMI            &kp SQT
+&mt LSHIFT LEFT  &kp Z  &kp X   &kp C      &kp V               &kp B         &kp N            &kp M  &kp COMMA  &kp DOT  &kp FSLH    &mt RSHFT RIGHT
+                               &tog 1  &kp SPACE  &mt LCMD BACKSPACE  &mt RALT TAB  &mt RCTRL ENTER     &tog 2
             >;
         };
 
