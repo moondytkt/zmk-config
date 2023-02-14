@@ -32,30 +32,31 @@
         compatible = "zmk,keymap";
 
         DEFAULT {
-            label = "QWERTY";
+            label = "BASE";
 
             // -----------------------------------------------------------------------------------------
-            // |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BKSP |
-            // | CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
-            // | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | ESC  |
-            //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
-
+            // |  DEL|  Q  |W(UP)|  E  |  R  |  T  |   |  Y  |  U  |  I  |  O  |  P  | SUP |
+            // | CTRL|A(LT)|S(DN)|D(RT)|  F  |G (C)|   |H (F)|  J  |  K  |  L  |  ;  |' (§)|
+            // |LSHFT|  Z  |  X  |  C  |  V  |B (V)|   |N (S)|  M  |  ,  |  .  |  /  |RSHFT|
+            //                   |NUM1 | SPC |BPSC |   | TAB | ENT | SYM |
+            //                           ESC  LCMD       RALT RCTRL
+            
             bindings = <
-   &kp DEL  &kp Q  &kp W   &kp E      &kp R     &kp T    &kp Y      &kp U      &kp I    &kp O     &kp P  &kp RA(RS(RCTRL))
-  &kp CAPS  &kp A  &kp S   &kp D      &kp F     &kp G    &kp H      &kp J      &kp K    &kp L  &kp SEMI            &mt RA(6) SQT
-&kp LSHIFT  &kp Z  &kp X   &kp C      &kp V     &kp B    &kp N      &kp M  &kp COMMA  &kp DOT  &kp FSLH         &kp RSHIFT
+   &kp DEL  &kp Q  &mt UP W   &kp E      &kp R     &kp T    &kp Y      &kp U      &kp I    &kp O  &kp P  &kp RA(RS(RCTRL))
+  &kp CAPS  &mt LEFT A  &mt DOWN S   &mt RIGHT D      &kp F     &mt LG(C) G    &mt LG(F) H   &kp J      &kp K    &kp L  &kp SEMI  &mt RA(6) SQT
+&kp LSHIFT  &kp Z  &kp X   &kp C      &kp V     &mt LG(V) B    &mt RA(RC(S)) N      &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp RSHIFT
                           &tog 1  &mt ESC SPACE  &mt LCMD BSPC  &mt RALT TAB  &mt RCTRL ENTER     &tog 2
             >;
         };
 
         NUMBERS {
-            label = "NUMBER";
+            label = "NUMBERS";
 
             // -----------------------------------------------------------------------------------------
-            // |  TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BKSP |
-            // | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT |     |      |
-            // | SHFT |     |     |     |     |     |   |     |     |     |     |     |      |
-            //                    | GUI |     | SPC |   | ENT |     | ALT |
+            // |  =  |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  |  -  |
+            // |     |     |     |  UP |     |     |   |  =  |  4  |  5  |  6  |  *  |  +  |
+            // |LSHFT|     |LEFT |DOWN |RIGHT|     |   |     |  1  |  2  |  3  |  /  |RSHFT|
+            //                   | DEF | DEF | DEF |   |     |     |  0  |
 
             bindings = <
 &kp EQUAL  &kp N1    &kp N2    &kp N3     &kp N4  &kp N5     &kp N6  &kp N7  &kp N8  &kp N9     &kp N0  &kp MINUS
@@ -66,13 +67,13 @@
         };
 
         SYMBOLS {
-            label = "SYMBOL";
+            label = "SYMBOLS";
 
             // -----------------------------------------------------------------------------------------
-            // |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BKSP |
-            // | CTRL |     |     |     |     |     |   |  -  |  =  |  [  |  ]  |  \  |  `   |
-            // | SHFT |     |     |     |     |     |   |  _  |  +  |  {  |  }  | "|" |  ~   |
-            //                    | GUI |     | SPC |   | ENT |     | ALT |
+            // |     |     |     |  (  |  )  |     |   |     |     |     |     |     |     |
+            // |VOLUP|VMUTE|     |  [  |  ]  |     |   |     |     |     |     |     |     |
+            // |VOLDN| P_P |     |  {  |  }  |     |   |     |     |     |     |     |     |
+            //                   | DEF | DEF | DEF |   | DEF |     | DEF |
 
             bindings = <
       &trans      &trans  &trans  &kp LBRC  &kp RBRC  &trans  &trans  &trans  &trans  &trans  &trans  &trans
@@ -83,6 +84,14 @@
         };
 
         SETTING {
+            label = "SETTING";
+            
+            // -----------------------------------------------------------------------------------------
+            // | DEF | BT1 | BT2 | BT3 | BT4 | BT5 |   |     |     |     |     |     |     |
+            // | DEF |     |     |     |     |     |   |     |     |     |     |     |     |
+            // | DEF |     |     |     |     |     |   |     |     |     |     |     |     |
+            //                   |BTCLR|BTCLR|BTCLR|   |     |     |     |
+            
             bindings = <
 &tog 0  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &trans  &trans  &trans  &trans  &trans  &trans
 &tog 0        &trans        &trans        &trans        &trans        &trans  &trans  &trans  &trans  &trans  &trans  &trans
