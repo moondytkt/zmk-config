@@ -3,6 +3,7 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/outputs.h>
 
+
 // Layers
 #define BASE 0
 #define NUMBERS 1
@@ -17,6 +18,8 @@
     };
 };
 
+
+// Combinations
 / {
     combos {
         compatible = "zmk,combos";
@@ -34,13 +37,16 @@
                        };
            };
     };
-    
+
+
 // Hold-tap behaviors
 &mt {
     tapping-term-ms = <200>;
     quick-tap-ms = <100>;
 };
 
+
+//Keymap
 /{
     keymap {
         compatible = "zmk,keymap";
@@ -49,11 +55,11 @@
             label = "BASE";
 
             // -----------------------------------------------------------------------------------------
-            // |  DEL|  Q  |W(UP)|  E  |  R  |  T  |   |  Y  |  U  |  I  |  O  |  P  | SUP |
-            // | CTRL|A(LT)|S(DN)|D(RT)|  F  |G (C)|   |H (F)|  J  |  K  |  L  |  ;  |' (§)|
+            // | DEL |  Q  |W(UP)|  E  |  R  |  T  |   |  Y  |  U  |  I  |  O  |  P  | SUP |
+            // |CTRL |A(LT)|S(DN)|D(RT)|  F  |G (C)|   |H (F)|  J  |  K  |  L  |  ;  |' (§)|
             // |LSHFT|  Z  |  X  |  C  |  V  |B (V)|   |N (S)|  M  |  ,  |  .  |  /  |RSHFT|
             //                   |NUM1 | SPC |BPSC |   | TAB | ENT | SYM |
-            //                           ESC  LCMD       RALT RCTRL
+            //                          (ESC) (LCMD)   (RALT) (RCTRL)
             
             bindings = <
   &kp DEL     &kp Q       &mt UP W    &kp E        &kp R  &kp T            &kp Y            &kp U  &kp I      &kp O    &kp P     &kp RA(RS(RCTRL))
