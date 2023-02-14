@@ -43,7 +43,7 @@ ESCAPE/*
   &kp DEL  &kp Q  &kp W   &kp E                   &kp R                &kp T          &kp Y            &kp U      &kp I    &kp O     &kp P  &kp RA(RS(RCTRL))
  &kp CAPS  &kp A  &kp S   &kp D                   &kp F                &kp G          &kp H            &kp J      &kp K    &kp L  &kp SEMI            &kp SQT
 &kp LSHFT  &kp Z  &kp X   &kp C                   &kp V                &kp B          &kp N            &kp M  &kp COMMA  &kp DOT  &kp FSLH          &kp RSHFT
-                         &tog 1  &mt ESCAPE SPACE  &mt LGUI BACKSPACE  &mt RALT TAB  &mt RCTRL ENTER     &tog 2
+                         &tog 1  &kp SPACE  &mt LGUI BACKSPACE  &mt RALT TAB  &mt RCTRL ENTER     &tog 2
             >;
         };
 
