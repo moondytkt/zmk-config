@@ -72,7 +72,6 @@
 // Hold-tap behaviors
 &mt {
     tapping-term-ms = <400>;
-    flavor = "tap-preferred";
     quick-tap-ms = <200>;
 };
 
