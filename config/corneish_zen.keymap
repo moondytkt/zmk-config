@@ -73,20 +73,8 @@
 &mt {
     tapping-term-ms = <400>;
     quick-tap-ms = <200>;
-};
+    flavor = "tap-preferred";
 
-/ {
-    behaviors {
-        ht: hold_tap {
-            compatible = "zmk,behavior-hold-tap";
-            label = "hold_tap";
-            #binding-cells = <2>;
-            tapping-term-ms = <400>;
-            quick-tap-ms = <150>;
-            flavor = "tap-preferred";
-            bindings = <&kp>, <&kp>;
-        };
-    };
 };
 
 //Keymap
