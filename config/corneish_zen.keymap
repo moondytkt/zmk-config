@@ -105,10 +105,10 @@
             //                          (ESC) (LCMD)   (RALT) (RCTRL)
             
             bindings = <
-  &kp DEL     &kp Q       &kp W       &kp E        &kp R  &kp T               &kp Y            &kp U  &kp I      &kp O    &kp P     &kp RA(RS(RCTRL))
-  &kp CAPS    &ht LEFT A  &ht UP S    &ht RIGHT D  &kp F  &ht LG(C) G         &ht LG(F) H      &kp J  &kp K      &kp L    &kp SEMI  &mt RA(6) SQT
-  &kp LSHIFT  &kp Z       &ht DOWN X  &kp C        &kp V  &ht_tp LG(V) B      &ht RA(RC(S)) N  &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp RSHIFT
-                                     &mo 1  &mt ESC SPACE  &mt LCMD BSPC      &mt RALT TAB  &mt RCTRL ENTER  &mo 2
+  &kp DEL     &kp Q       &kp W       &kp E        &kp R  &kp T              &kp Y            &kp U  &kp I      &kp O    &kp P     &kp RA(RS(RCTRL))
+  &kp CAPS    &ht LEFT A  &ht UP S    &ht RIGHT D  &kp F  &ht LG(C) G        &ht LG(F) H      &kp J  &kp K      &kp L    &kp SEMI  &mt RA(6) SQT
+  &kp LSHIFT  &kp Z       &ht DOWN X  &kp C        &kp V  &ht LG(V) B        &ht RA(RC(S)) N  &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp RSHIFT
+                                     &mo 1  &mt ESC SPACE  &mt LCMD BSPC     &mt RALT TAB  &mt RCTRL ENTER  &mo 2
             >;
         };
 
