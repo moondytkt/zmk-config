@@ -94,8 +94,8 @@
             
             bindings = <
   &kp DEL     &kp Q       &kp W       &kp E        &kp R  &kp T              &kp Y            &kp U  &kp I      &kp O    &kp P     &kp RA(RS(RCTRL))
-  &kp CAPS    &ht LEFT A  &ht UP S    &ht RIGHT D  &kp F  &ht LG(C) G        &ht LG(F) H      &kp J  &kp K      &kp L    &kp SEMI  &mt RA(6) SQT
-  &kp LSHIFT  &kp Z       &ht DOWN X  &kp C        &kp V  &ht LG(V) B        &ht RA(RC(S)) N  &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp RSHIFT
+  &kp CAPS    &mt LEFT A  &mt UP S    &mt RIGHT D  &kp F  &mt LG(C) G        &mt LG(F) H      &kp J  &kp K      &kp L    &kp SEMI  &mt RA(6) SQT
+  &kp LSHIFT  &kp Z       &mt DOWN X  &kp C        &kp V  &mt LG(V) B        &mt RA(RC(S)) N  &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp RSHIFT
                                      &mo 1  &mt ESC SPACE  &mt LCMD BSPC     &mt RALT TAB  &mt RCTRL ENTER  &mo 2
             >;
         };
@@ -146,8 +146,8 @@
             
             bindings = <
   &kp DEL     &kp Q       &kp W       &kp E        &kp R  &kp T              &kp Y        &kp U  &kp I      &kp O    &kp P     &kp UNDER
-  &kp CAPS    &ht LEFT A  &ht UP S    &ht RIGHT D  &kp F  &ht LC(C) G        &ht LC(F) H  &kp J  &kp K      &kp L    &kp SEMI  &mt RA(6) SQT
-  &kp LSHIFT  &kp Z       &ht DOWN X  &kp C        &kp V  &ht LC(V) B        &kp S N      &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp RSHIFT
+  &kp CAPS    &mt LEFT A  &mt UP S    &mt RIGHT D  &kp F  &mt LC(C) G        &mt LC(F) H  &kp J  &kp K      &kp L    &kp SEMI  &mt RA(6) SQT
+  &kp LSHIFT  &kp Z       &mt DOWN X  &kp C        &kp V  &mt LC(V) B        &kp S N      &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp RSHIFT
                                        &mo 1  &mt ESC SPACE  &kp BSPC        &mt RALT TAB  &mt RCTRL ENTER  &mo 2
             >;
         };
