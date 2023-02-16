@@ -48,15 +48,15 @@
             bindings = <&tog 2>;
                        };
                        
-        combo_CSGO {
-            timeout-ms = <50>;
-            key-positions = <14 27>;
-            bindings = <&tog 3>;
-                       };
-                       
         combo_WIN {
             timeout-ms = <50>;
             key-positions = <5 6>;
+            bindings = <&tog 3>;
+                       };
+                      
+        combo_CSGO {
+            timeout-ms = <50>;
+            key-positions = <14 27>;
             bindings = <&tog 4>;
                        };
                        
@@ -112,7 +112,7 @@
 &kp EQUAL  &kp N1    &kp N2    &kp N3     &kp N4  &kp N5      &kp N6     &kp N7  &kp N8  &kp N9  &kp N0     &kp MINUS
 &none      &kp LEFT  &kp UP    &kp RIGHT  &none   &none       &kp EQUAL  &kp N4  &kp N5  &kp N6  &kp STAR   &kp PLUS
 &kp LSHFT  &none     &kp DOWN  &none      &none   &none       &none      &kp N1  &kp N2  &kp N3  &kp SLASH  &kp RSHFT
-                             &mo 1  &kp SPACE  &kp BSPC       &none  &none  &kp N0
+                             &tog 1  &kp SPACE  &kp BSPC      &none  &none  &kp N0
             >;
         };
 
@@ -123,7 +123,7 @@
             // |     |     |     |  (  |  )  |     |   |     |     |     |     |     |     |
             // |VOLUP|VMUTE|     |  [  |  ]  |     |   |     |     |     |     |     |     |
             // |VOLDN| P_P |     |  {  |  }  |     |   |     |     |     |     |     |     |
-            //                   | DEF | DEF | DEF |   | SYM | SYM | SYM |
+            //                   | SYM | SYM | SYM |   | SYM | SYM | SYM |
 
             bindings = <
 &none         &none       &none  &kp LBRC  &kp RBRC  &none      &none  &none  &none  &none  &none  &none
@@ -144,10 +144,10 @@
             //                          (ESC) (LCMD)   (RALT) (RCTRL)
             
             bindings = <
-  &kp DEL     &kp Q       &kp W       &kp E        &kp R  &kp T              &kp Y        &kp U  &kp I      &kp O    &kp P     &kp UNDER
+  &kp DEL     &kp Q       &kp W       &kp E        &kp R  &kp T              &kp Y        &kp U  &kp I      &kp O    &kp P     &kp MINUS
   &kp CAPS    &mt LEFT A  &mt UP S    &mt RIGHT D  &kp F  &mt LC(C) G        &mt LC(F) H  &kp J  &kp K      &kp L    &kp SEMI  &mt RA(6) SQT
-  &kp LSHIFT  &kp Z       &mt DOWN X  &kp C        &kp V  &mt LC(V) B        &kp S N      &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp RSHIFT
-                                       &mo 1  &mt ESC SPACE  &kp BSPC        &mt RALT TAB  &mt RCTRL ENTER  &mo 2
+  &kp LSHIFT  &kp Z       &mt DOWN X  &kp C        &kp V  &mt LC(V) B        &kp N        &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp RSHIFT
+                                       &mo 1  &mt ESC SPACE  &kp BSPC        &mt RALT TAB &mt RCTRL ENTER  &mo 2
             >;
         };
 
