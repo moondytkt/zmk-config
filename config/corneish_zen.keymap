@@ -6,9 +6,9 @@
 
 // Layers
 #define BASE 0
-#define NUM 1
-#define SYM 2
-#define WIN 3
+#define WIN 1
+#define NUM 2
+#define SYM 3
 #define CSGO 4
 #define STTG 5
 
@@ -39,19 +39,19 @@
         combo_NUM {
             timeout-ms = <50>;
             key-positions = <19 20 21 22>;
-            bindings = <&tog 1>;
+            bindings = <&tog 2>;
                        };
                        
         combo_SYM {
             timeout-ms = <50>;
             key-positions = <31 32 33 34>;
-            bindings = <&tog 2>;
+            bindings = <&tog 3>;
                        };
                        
         combo_WIN {
             timeout-ms = <50>;
             key-positions = <5 6>;
-            bindings = <&tog 3>;
+            bindings = <&tog 1>;
                        };
                       
         combo_CSGO {
@@ -86,16 +86,34 @@
 
             // -----------------------------------------------------------------------------------------
             // | DEL |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U  |  I  |  O  |  P  | SUP |
-            // |CAPS |A(LT)|S(UP)|D(RT)|  F  |G (C)|   |H (F)|  J  |  K  |  L  |  ;  |' (§)|
+            // |CAPS |A(LT)|S(UP)|D(RT)|  F  |G (C)|   |H (F)|  J  |  K  |  L  |  ;  |' (-)|
             // |LSHFT|  Z  |X(DN)|  C  |  V  |B (V)|   |N (S)|  M  |  ,  |  .  |  /  |RSHFT|
             //                   | NUM | SPC |BSPC |   | TAB | ENT | SYM |
             //                          (ESC) (LCMD)   (RALT) (RCTRL)
             
             bindings = <
   &kp DEL     &kp Q       &kp W       &kp E        &kp R  &kp T              &kp Y            &kp U  &kp I      &kp O    &kp P     &kp RA(RS(RCTRL))
-  &kp CAPS    &mt LEFT A  &mt UP S    &mt RIGHT D  &kp F  &mt LG(C) G        &mt LG(F) H      &kp J  &kp K      &kp L    &kp SEMI  &mt RA(N6) SQT
+  &kp CAPS    &mt LEFT A  &mt UP S    &mt RIGHT D  &kp F  &mt LG(C) G        &mt LG(F) H      &kp J  &kp K      &kp L    &kp SEMI  &mt MINUS SQT
   &kp LSHIFT  &kp Z       &mt DOWN X  &kp C        &kp V  &mt LG(V) B        &mt RA(RC(S)) N  &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp RSHIFT
-                                     &mo 1  &mt ESC SPACE  &mt LCMD BSPC     &mt RALT TAB  &mt RCTRL ENTER  &mo 2
+                                  &mo 2  &mt ESC SPACE  &mt LCMD BSPC        &mt RALT TAB  &mt RCTRL ENTER  &mo 3
+            >;
+        };
+
+win_layer {
+            label = "WIN";
+
+            // -----------------------------------------------------------------------------------------
+            // | DEL |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U  |  I  |  O  |  P  |  -  |
+            // |CAPS |A(LT)|S(UP)|D(RT)|  F  |G (C)|   |H (F)|  J  |  K  |  L  |  ;  |  '  |
+            // |LSHFT|  Z  |X(DN)|  C  |  V  |B (V)|   |  S  |  M  |  ,  |  .  |  /  |RSHFT|
+            //                   | NUM | SPC |BSPC |   | TAB | ENT | SYM |
+            //                          (ESC) (LCMD)   (RALT) (RCTRL)
+            
+            bindings = <
+  &kp DEL     &kp Q       &kp W       &kp E        &kp R  &kp T              &kp Y        &kp U  &kp I      &kp O    &kp P     &kp MINUS
+  &kp CAPS    &mt LEFT A  &mt UP S    &mt RIGHT D  &kp F  &mt LC(C) G        &mt LC(F) H  &kp J  &kp K      &kp L    &kp SEMI  &kp SQT
+  &kp LSHIFT  &kp Z       &mt DOWN X  &kp C        &kp V  &mt LC(V) B        &kp N        &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp RSHIFT
+                                       &mo 2  &mt ESC SPACE  &kp BSPC        &mt RALT TAB &mt RCTRL ENTER  &mo 3
             >;
         };
 
@@ -104,15 +122,15 @@
 
             // -----------------------------------------------------------------------------------------
             // |  =  |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  |  -  |
-            // |     |LEFT | UP  |RIGHT|     |     |   |  =  |  4  |  5  |  6  |  *  |  +  |
+            // |LALT |LEFT | UP  |RIGHT|     |     |   |  =  |  4  |  5  |  6  |  *  |  +  |
             // |LSHFT|     |DOWN |     |     |     |   |     |  1  |  2  |  3  |  /  |RSHFT|
-            //                   | NUM | SPC |BPSC |   |     |     |  0  |
+            //                   | NUM | SPC |BPSC |   | TAB | ENT |  0  |
 
             bindings = <
 &kp EQUAL  &kp N1    &kp N2    &kp N3     &kp N4  &kp N5      &kp N6     &kp N7  &kp N8  &kp N9  &kp N0     &kp MINUS
-&none      &kp LEFT  &kp UP    &kp RIGHT  &none   &none       &kp EQUAL  &kp N4  &kp N5  &kp N6  &kp STAR   &kp PLUS
+&kp LALT      &kp LEFT  &kp UP    &kp RIGHT  &none   &none       &kp EQUAL  &kp N4  &kp N5  &kp N6  &kp STAR   &kp PLUS
 &kp LSHFT  &none     &kp DOWN  &none      &none   &none       &none      &kp N1  &kp N2  &kp N3  &kp SLASH  &kp RSHFT
-                             &tog 1  &kp SPACE  &kp BSPC      &none  &none  &kp N0
+                             &tog 2  &kp SPACE  &kp BSPC      &kp TAB  &kp ENTER  &kp N0
             >;
         };
 
@@ -129,25 +147,7 @@
 &none         &none       &none  &kp LBRC  &kp RBRC  &none      &none  &none  &none  &none  &none  &none
 &kp C_VOL_UP  &kp C_MUTE  &none  &kp LPAR  &kp RPAR  &none      &none  &none  &none  &none  &none  &none
 &kp C_VOL_DN  &kp C_PP    &none  &kp LBKT  &kp RBKT  &none      &none  &none  &none  &none  &none  &none
-                                    &tog 2  &tog 2  &tog 2      &tog 2  &tog 2  &tog 2
-            >;
-        };
-        
-        win_layer {
-            label = "WIN";
-
-            // -----------------------------------------------------------------------------------------
-            // | DEL |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U  |  I  |  O  |  P  |  -  |
-            // |CAPS |A(LT)|S(UP)|D(RT)|  F  |G (C)|   |H (F)|  J  |  K  |  L  |  ;  |' (§)|
-            // |LSHFT|  Z  |X(DN)|  C  |  V  |B (V)|   |  S  |  M  |  ,  |  .  |  /  |RSHFT|
-            //                   | NUM | SPC |BSPC |   | TAB | ENT | SYM |
-            //                          (ESC) (LCMD)   (RALT) (RCTRL)
-            
-            bindings = <
-  &kp DEL     &kp Q       &kp W       &kp E        &kp R  &kp T              &kp Y        &kp U  &kp I      &kp O    &kp P     &kp MINUS
-  &kp CAPS    &mt LEFT A  &mt UP S    &mt RIGHT D  &kp F  &mt LC(C) G        &mt LC(F) H  &kp J  &kp K      &kp L    &kp SEMI  &mt RA(6) SQT
-  &kp LSHIFT  &kp Z       &mt DOWN X  &kp C        &kp V  &mt LC(V) B        &kp N        &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp RSHIFT
-                                       &mo 1  &mt ESC SPACE  &kp BSPC        &mt RALT TAB &mt RCTRL ENTER  &mo 2
+                                    &tog 3  &tog 3  &tog 3      &tog 3  &tog 3  &tog 3
             >;
         };
 
