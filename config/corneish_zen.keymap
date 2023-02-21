@@ -94,7 +94,7 @@
             bindings = <
   &kp DEL     &kp Q       &kp W       &kp E        &kp R  &kp T              &kp Y            &kp U  &kp I      &kp O    &kp P     &mt RA(RS(RCTRL)) MINUS
   &kp CAPS    &mt LEFT A  &mt UP S    &mt RIGHT D  &kp F  &mt LG(C) G        &mt LG(F) H      &kp J  &kp K      &kp L    &kp SEMI  &mt RA(NUMBER_6) SQT
-  &kp LSHIFT  &kp Z       &mt DOWN X  &kp C        &kp V  &mt LG(V) B        &mt RA(RC(S)) N  &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp RSHIFT
+  &kp LSHIFT   &kp Z       &mt DOWN X  &kp C        &kp V  &mt LG(V) B        &mt RA(RC(S)) N  &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp RSHIFT
                                   &mo 2  &mt ESC SPACE  &mt LCMD BSPC        &mt RALT TAB  &mt RCTRL ENTER  &mo 3
             >;
         };
@@ -107,13 +107,13 @@ win_layer {
             // |CAPS |A(LT)|S(UP)|D(RT)|  F  |G (C)|   |H (F)|  J  |  K  |  L  |  ;  |  '  |
             // |LSHFT|  Z  |X(DN)|  C  |  V  |B (V)|   |  S  |  M  |  ,  |  .  |  /  |RSHFT|
             //                   | NUM | SPC |BSPC |   | TAB | ENT | SYM |
-            //                          (ESC) (LCMD)   (RALT) (RCTRL)
+            //                          (ESC) (LCTRL)   (RALT) (RCTRL)
             
             bindings = <
   &kp DEL     &kp Q       &kp W       &kp E        &kp R  &kp T              &kp Y        &kp U  &kp I      &kp O    &kp P     &kp MINUS
   &kp CAPS    &mt LEFT A  &mt UP S    &mt RIGHT D  &kp F  &mt LC(C) G        &mt LC(F) H  &kp J  &kp K      &kp L    &kp SEMI  &kp SQT
   &kp LSHIFT  &kp Z       &mt DOWN X  &kp C        &kp V  &mt LC(V) B        &kp N        &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp RSHIFT
-                                       &mo 2  &mt ESC SPACE  &kp BSPC        &mt RALT TAB &mt RCTRL ENTER  &mo 3
+                                       &mo 2  &mt ESC SPACE  &kp LCTRL BSPC        &mt RALT TAB &mt RCTRL ENTER  &mo 3
             >;
         };
 
@@ -156,8 +156,8 @@ win_layer {
 
             // -----------------------------------------------------------------------------------------
             // | ESC |  1  |  2  |  3  |  4  |  5  |   |VOLUP| F1  | F2  |     |     | DEF |
-            // |LSHFT|LEFT | UP  |RIGHT|  F  |  G  |   |VOLDN|     |     |     |     | DEF |
-            // |LCTRL|  Q  |DOWN |  B  |  R  |  T  |   |VMUTE|     |     |     |     | DEF |
+            // |LSHFT|  Q  |  W  |  E  |  R  |  T  |   |VOLDN|     |     |     |     | DEF |
+            // |LCTRL|  A  |  S  |  D  |  F  |  G  |   |VMUTE|     |     |     |     | DEF |
             //                   |  E  |SPACE| TAB |   |CSGO |CSGO |CSGO |
 
             bindings = <
