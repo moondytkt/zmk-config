@@ -162,15 +162,15 @@ win_layer {
 
             // -----------------------------------------------------------------------------------------
             // | ESC |  1  |  2  |  3  |  4  |  5  |   |VOLUP| F1  | F2  |     |     | DEF |
-            // |LSHFT|  Q  |  W  |  E  |  R  |  T  |   |VOLDN|     |     |     |     | DEF |
-            // |LCTRL|  A  |  S  |  D  |  F  |  G  |   |VMUTE|     |     |     |     | DEF |
-            //                   |  E  |SPACE| TAB |   |CSGO |CSGO |CSGO |
+            // | TAB |  Q  |  W  |  E  |  R  |  T  |   |VOLDN|     |     |     |     | DEF |
+            // |LSHFT|  A  |  S  |  D  |  F  |  G  |   |VMUTE|     |     |     |     | DEF |
+            //                   |LCTRL|SPACE| TAB |   |CSGO |CSGO |CSGO |
 
             bindings = <
 &kp ESC     &kp N1  &kp N2  &kp N3  &kp N4  &kp N5      &kp C_VOL_UP  &kp F1  &kp F2  &none  &none  &tog 4
 &kp TAB     &kp Q   &kp W   &kp E   &kp R   &kp T       &kp C_VOL_DN  &none  &none    &none  &none  &tog 4
 &kp LSHIFT  &kp A   &kp S   &kp D   &kp F   &kp G       &kp C_MUTE    &none  &none    &none  &none  &tog 4
-                               &kp LCTRL  &kp SPACE  &kp TAB       &tog 4  &tog 4  &tog 4
+                    &kp LCTRL  &kp SPACE  &kp TAB       &tog 4  &tog 4  &tog 4
             >;
         };
 
