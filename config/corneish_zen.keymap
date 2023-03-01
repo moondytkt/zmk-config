@@ -44,13 +44,13 @@
                      
         combo_COPYPASTEbase {
             timeout-ms = <50>;
-            key-positions = <27 28>;
+            key-positions = <16 17>;
             bindings = <&mt LG(V) LG(C)>;
                      };  
                      
         combo_COPYPASTEwin {
             timeout-ms = <50>;
-            key-positions = <15 16>;
+            key-positions = <28 29>;
             bindings = <&mt LC(V) LC(C)>;
                      };
                      
