@@ -39,7 +39,19 @@
         combo_CAPS {
             timeout-ms = <50>;
             key-positions = <12 13>;
-            bindings = <&kp CAPS>;
+            bindings = <&kp CAPSLOCK>;
+                     };
+                     
+        combo_COPYPASTEbase {
+            timeout-ms = <50>;
+            key-positions = <27 28>;
+            bindings = <&mt LG(V) LG(C)>;
+                     };  
+                     
+        combo_COPYPASTEwin {
+            timeout-ms = <50>;
+            key-positions = <15 16>;
+            bindings = <&mt LC(V) LC(C)>;
                      };
                      
         combo_ToggleNUMright {
