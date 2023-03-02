@@ -38,19 +38,19 @@
                      
         combo_CAPS {
             timeout-ms = <50>;
-            key-positions = <12 13>;
+            key-positions = <16 19>;
             bindings = <&kp CAPSLOCK>;
                      };
                      
         combo_COPYPASTEbase {
             timeout-ms = <50>;
-            key-positions = <16 17>;
+            key-positions = <13 14>;
             bindings = <&mt LG(V) LG(C)>;
                      };  
                      
         combo_COPYPASTEwin {
             timeout-ms = <50>;
-            key-positions = <28 29>;
+            key-positions = <21 22>;
             bindings = <&mt LC(V) LC(C)>;
                      };
                      
@@ -59,12 +59,6 @@
             key-positions = <33 34>;
             bindings = <&mo 2>;
                      };
-                       
-        combo_SYM {
-            timeout-ms = <50>;
-            key-positions = <31 32 33 34>;
-            bindings = <&tog 3>;
-                       };
                        
         combo_WIN {
             timeout-ms = <50>;
@@ -80,7 +74,7 @@
                        
         combo_STTG {
             timeout-ms = <50>;
-            key-positions = <13 14 15 16>;
+            key-positions = <1 2 3 4>;
             bindings = <&tog 5>;
                        };
            };
@@ -123,7 +117,7 @@ win_layer {
             // -----------------------------------------------------------------------------------------
             // | DEL |Q (1)|W (2)|E (3)|R (4)|T (5)|   |Y (6)|U (7)|I (8)|O (9)|P (0)|  -  |
             // | SUP |  A  |S(UP)|  D  |  F  |G (C)|   |H (F)|  J  |  K  |  L  |  ;  |  '  |
-            // |LSHFT|Z(LT)|X(DN)|C(RT)|  V  |B (V)|   |  S  |  M  |  ,  |  .  |  /  |RSHFT|
+            // |LSHFT|Z(LT)|X(DN)|C(RT)|  V  |B (V)|   |N (S)|  M  |  ,  |  .  |  /  |RSHFT|
             //                   | NUM | SPC |BSPC |   | TAB | ENT | SYM |
             //                         (ESC) (LCTRL)   (RALT)(RCTRL)
             
