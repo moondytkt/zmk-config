@@ -21,7 +21,7 @@
 };
 
 // Combination Behaviors
-// -----------------------------------------------------------------------------
+// _____________________________________   _____________________________________
 // |  0  |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  10 |  11 |
 // |  12 |  13 |  14 |  15 |  16 |  17 |   |  18 |  19 |  20 |  21 |  22 |  23 |
 // |  24 |  25 |  26 |  27 |  28 |  29 |   |  30 |  31 |  32 |  33 |  34 |  35 |
@@ -105,77 +105,77 @@
         base_layer {
             label = "BASE";
 
-            // -----------------------------------------------------------------------------------------
+            // _____________________________________   _____________________________________
             // | DEL |Q (1)|W (2)|E (3)|R (4)|T (5)|   |Y (6)|U (7)|I (8)|O (9)|P (0)|  -  |
-            // |MEGA |  A  |S(UP)|  D  |  F  |G (C)|   |H (F)|  J  |  K  |  L  |  ;  |' (§)|
-            // |LSHFT|Z(LT)|X(DN)|C(RT)|  V  |B (V)|   |N (S)|  M  |  ,  |  .  |  /  |RSHFT|
+            // |MEGA |  A  |S(UP)|  D  |  F  |  G  |   |H (F)|  J  |  K  |  L  |  ;  |' (§)|
+            // |LSHFT|Z(LT)|X(DN)|C(RT)|  V  |  B  |   |N (S)|  M  |  ,  |  .  |  /  |RSHFT|
             //                   | NUM | SPC |BSPC |   | TAB | ENT | SYM |
             //                          (ESC) (LCMD)   (RALT)(RCTRL)
             
             bindings = <
-  &kp DEL                     &mt N1 Q      &mt N2 W    &mt N3 E     &mt N4 R  &mt N5 T           &mt N6 Y         &mt N7 U  &mt N8 I   &mt N9 O &mt N0 P  &kp MINUS
-  &mt RA(RS(RA(RCMD))) TILDE  &kp A         &mt UP S    &kp D        &kp F     &mt LG(C) G        &mt LG(F) H      &kp J     &kp K      &kp L    &kp SEMI  &mt RA(NUMBER_6) SQT
-  &kp LSHIFT                  &mt LEFT Z    &mt DOWN X  &mt RIGHT C  &kp V     &mt LG(V) B        &mt RA(RC(S)) N  &kp M     &kp COMMA  &kp DOT  &kp FSLH  &kp RSHIFT
-                                                       &mo 2  &mt ESC SPACE  &mt LCMD BSPC        &mt RALT TAB  &mt RCTRL ENTER  &mo 3
+  &kp DEL                     &mt N1 Q      &mt N2 W    &mt N3 E     &mt N4 R  &mt N5 T       &mt N6 Y         &mt N7 U  &mt N8 I   &mt N9 O &mt N0 P  &kp MINUS
+  &mt RA(RS(RA(RCMD))) TILDE  &kp A         &mt UP S    &kp D        &kp F     &kp G          &mt LG(F) H      &kp J     &kp K      &kp L    &kp SEMI  &mt RA(NUMBER_6) SQT
+  &kp LSHIFT                  &mt LEFT Z    &mt DOWN X  &mt RIGHT C  &kp V     &kp B          &mt RA(RC(S)) N  &kp M     &kp COMMA  &kp DOT  &kp FSLH  &kp RSHIFT
+                                                    &mo 2  &mt ESC SPACE  &mt LCMD BSPC       &mt RALT TAB  &mt RCTRL ENTER  &mo 3
             >;
         };
 
 win_layer {
             label = "WIN";
 
-            // -----------------------------------------------------------------------------------------
+            // _____________________________________   _____________________________________
             // | DEL |Q (1)|W (2)|E (3)|R (4)|T (5)|   |Y (6)|U (7)|I (8)|O (9)|P (0)|  -  |
-            // |MEGA |  A  |S(UP)|  D  |  F  |G (C)|   |H (F)|  J  |  K  |  L  |  ;  |  '  |
-            // |LSHFT|Z(LT)|X(DN)|C(RT)|  V  |B (V)|   |N (S)|  M  |  ,  |  .  |  /  |RSHFT|
+            // |MEGA |  A  |S(UP)|  D  |  F  |  G  |   |H (F)|  J  |  K  |  L  |  ;  |  '  |
+            // |LSHFT|Z(LT)|X(DN)|C(RT)|  V  |  B  |   |N (S)|  M  |  ,  |  .  |  /  |RSHFT|
             //                   | NUM | SPC |BSPC |   | TAB | ENT | SYM |
             //                         (ESC) (LCTRL)   (RALT)(RCTRL)
             
             bindings = <
-  &kp DEL                    &mt N1 Q    &mt N2 W    &mt N3 E      &mt N4 R &mt N5 T         &mt N6 Y     &mt N7 U  &mt N8 I   &mt N9 O  &mt N0 P  &kp MINUS
-  &mt RA(RS(RC(RCMD))) TILDE &kp A       &mt UP S    &kp D         &kp F    &mt LC(C) G      &mt LC(F) H  &kp J     &kp K      &kp L     &kp SEMI  &kp SQT
-  &kp LSHIFT                 &mt LEFT Z  &mt DOWN X  &mt RIGHT C   &kp V    &mt LC(V) B      &kp N        &kp M     &kp COMMA  &kp DOT   &kp FSLH  &kp RSHIFT
-                                                   &mo 2  &mt ESC SPACE  &mt LCTRL BSPC      &mt RALT TAB &mt RCTRL ENTER  &mo 3
+  &kp DEL                    &mt N1 Q    &mt N2 W    &mt N3 E      &mt N4 R  &mt N5 T         &mt N6 Y     &mt N7 U  &mt N8 I   &mt N9 O  &mt N0 P  &kp MINUS
+  &mt RA(RS(RC(RCMD))) TILDE &kp A       &mt UP S    &kp D         &kp F     &kp  G           &mt LC(F) H  &kp J     &kp K      &kp L     &kp SEMI  &kp SQT
+  &kp LSHIFT                 &mt LEFT Z  &mt DOWN X  &mt RIGHT C   &kp V     &kp  B           &kp N        &kp M     &kp COMMA  &kp DOT   &kp FSLH  &kp RSHIFT
+                                                 &mo 2  &mt ESC SPACE  &mt LCTRL BSPC         &mt RALT TAB &mt RCTRL ENTER  &mo 3
             >;
         };
 
         num_layer {
             label = "NUM";
 
-            // -----------------------------------------------------------------------------------------
-            // |  =  |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  |  -  |
-            // |LALT |     | UP  |     |     |     |   |  =  |  4  |  5  |  6  |  *  |  +  |
-            // |LSHFT|LEFT |DOWN |RIGHT|     |     |   |     |  1  |  2  |  3  |  /  |RSHFT|
+            // _____________________________________   _____________________________________
+            // |LCTRL|     |     |     |  {  |  }  |   |     |  7  |  8  |  9  |  0  |  -  |
+            // |LALT |     | UP  |     |  (  |  )  |   |     |  4  |  5  |  6  |  *  |  +  |
+            // |LSHFT|RIGHT| DOWN| LEFT|  [  |  ]  |   |     |  1  |  2  |  3  |  /  |  =  |
             //                   | NUM | SPC |BPSC |   | TAB | ENT |  0  |
 
             bindings = <
-&kp EQUAL  &kp N1    &kp N2    &kp N3     &kp N4  &kp N5      &kp N6     &kp N7  &kp N8  &kp N9  &kp N0     &kp MINUS
-&kp LALT   &none     &kp UP    &none      &none   &none       &kp EQUAL  &kp N4  &kp N5  &kp N6  &kp STAR   &kp PLUS
-&kp LSHFT  &kp LEFT  &kp DOWN  &kp RIGHT  &none   &none       &none      &kp N1  &kp N2  &kp N3  &kp SLASH  &kp RSHFT
-                             &tog 2  &kp SPACE  &kp BSPC      &kp TAB  &kp ENTER  &kp N0
+&kp LCTRL  &none     &none     &none      &kp LBRC   &kp RBRC      &kp N6  &kp N7  &kp N8  &kp N9  &kp N0     &kp MINUS
+&kp LALT   &none     &kp UP    &none      &kp LPAR   &kp RPAR      &none   &kp N4  &kp N5  &kp N6  &kp STAR   &kp PLUS
+&kp LSHFT  &kp LEFT  &kp DOWN  &kp RIGHT  &kp LBKT   &kp RBKT      &none   &kp N1  &kp N2  &kp N3  &kp SLASH  &kp EQUAL
+                                  &tog 2  &kp SPACE  &kp BSPC      &kp TAB  &kp ENTER  &kp N0
             >;
         };
 
         media_layer {
             label = "MEDIA";
 
-            // -----------------------------------------------------------------------------------------
-            // |     |     |     |  (  |  )  |     |   |     |     |     |     |     |     |
-            // |VOLUP|VMUTE|     |  [  |  ]  |     |   |     |     |     |     |     |     |
-            // |VOLDN| P_P |     |  {  |  }  |     |   |     |     |     |     |     |     |
+            // _____________________________________   _____________________________________
+            // |     |     |     |     |     |     |   |     |     |     |     |     |     |
+            // |     |     |     |     |VOLUP|VMUTE|   |     |     |     |     |     |     |
+            // |     |     |     |     |VOLDN| P_P |   |     |     |     |     |     |     |
             //                   | MED | MED | MED |   | MED | MED | MED |
 
             bindings = <
-&none         &none       &none  &kp LBRC  &kp RBRC  &none      &none  &none  &none  &none  &none  &none
-&kp C_VOL_UP  &kp C_MUTE  &none  &kp LPAR  &kp RPAR  &none      &none  &none  &none  &none  &none  &none
-&kp C_VOL_DN  &kp C_PP    &none  &kp LBKT  &kp RBKT  &none      &none  &none  &none  &none  &none  &none
-                                    &tog 3  &tog 3  &tog 3      &tog 3  &tog 3  &tog 3
+&none  &none  &none  &none  &none         &none           &none  &none  &none  &none  &none  &none
+&none  &none  &none  &none  &kp C_VOL_UP  &kp C_MUTE      &none  &none  &none  &none  &none  &none
+&none  &none  &none  &none  &kp C_VOL_DN  &kp C_PP        &none  &none  &none  &none  &none  &none
+                              &tog 3  &tog 3  &tog 3      &tog 3  &tog 3  &tog 3
             >;
         };
 
         csgo_layer {
             label = "CSGO";
 
-            // -----------------------------------------------------------------------------------------
+            // _____________________________________   _____________________________________
             // | ESC |  1  |  2  |  3  |  4  |  5  |   |VOLUP| F1  | F2  |     |     | DEF |
             // | TAB |  Q  |  W  |  E  |  R  |  T  |   |VOLDN|     |     |     |     | DEF |
             // |LSHFT|  A  |  S  |  D  |  F  |  G  |   |VMUTE|     |     |     |     | DEF |
@@ -192,7 +192,7 @@ win_layer {
         sttg_layer {
             label = "STTG";
             
-            // -----------------------------------------------------------------------------------------
+            // _____________________________________   _____________________________________
             // | DEF | BT1 | BT2 | BT3 | BT4 | BT5 |   |     |     |     |     |     |     |
             // | DEF | SET | SET | SET | SET | SET |   |     |SWTCH| BLE | USB |     |     |
             // | DEF |     |     |     |     |     |   |     |     |     |     |     |     |
@@ -207,4 +207,3 @@ win_layer {
         };
     };
 };
-
