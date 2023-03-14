@@ -94,7 +94,6 @@
         zed_em_kay: zed_em_kay {
             label = "ZM_zed_em_kay";
             compatible = "zmk,behavior-macro";
-            layers = <1>;
             #binding-cells = <0>;
             bindings
                 = <&macro_press &kp LALT>
@@ -140,7 +139,7 @@ win_layer {
 
             // _____________________________________   _____________________________________
             // | DEL |Q (1)|W (2)|E (3)|R (4)|T (5)|   |Y (6)|U (7)|I (8)|O (9)|P (0)|  -  |
-            // | *** |  A  |S(UP)|  D  |  F  |  G  |   |H (F)|  J  |  K  |  L  |  ;  | '(`)|
+            // | (§) |  A  |S(UP)|  D  |  F  |  G  |   |H (F)|  J  |  K  |  L  |  ;  | '(`)|
             // |LSHFT|Z(LT)|X(DN)|C(RT)|  V  |  B  |   |N (S)|  M  |  ,  |  .  |  /  |RSHFT|
             //                   | NUM | SPC |BSPC |   | TAB | ENT | SYM |
             //                         (ESC) (LCTRL)   (RALT)(RCTRL)
