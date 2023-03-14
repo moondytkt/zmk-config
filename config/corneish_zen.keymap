@@ -92,7 +92,7 @@
 / {
     macros {
         section_key: section_key {
-            label = "ZM_zed_em_kay";
+            label = "ZM_section_key";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
