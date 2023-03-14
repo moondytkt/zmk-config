@@ -94,7 +94,7 @@
         zed_em_kay: zed_em_kay {
             label = "ZM_zed_em_kay";
             compatible = "zmk,behavior-macro";
-            layers = <1>
+            layers = <1>;
             #binding-cells = <12>;
             bindings
                 = <&macro_press &kp LALT>
