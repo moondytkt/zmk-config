@@ -91,7 +91,7 @@
 
 / {
     macros {
-        zed_em_kay: zed_em_kay {
+        zed_em_kay: section_key {
             label = "ZM_zed_em_kay";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -121,16 +121,16 @@
 
             // _____________________________________   _____________________________________
             // | DEL |Q (1)|W (2)|E (3)|R (4)|T (5)|   |Y (6)|U (7)|I (8)|O (9)|P (0)|  -  |
-            // |MEGA |  A  |S(UP)|  D  |  F  |  G  |   |H (F)|  J  |  K  |  L  |  ;  |' (§)|
+            // |MEGA§|  A  |S(UP)|  D  |  F  |  G  |   |H (F)|  J  |  K  |  L  |  ;  |' (`)|
             // |LSHFT|Z(LT)|X(DN)|C(RT)|  V  |  B  |   |N (S)|  M  |  ,  |  .  |  /  |RSHFT|
             //                   | NUM | SPC |BSPC |   | TAB | ENT | SYM |
             //                          (ESC) (LCMD)   (RALT)(RCTRL)
             
             bindings = <
-  &kp DEL                     &mt N1 Q      &mt N2 W    &mt N3 E     &mt N4 R  &mt N5 T       &mt N6 Y         &mt N7 U  &mt N8 I   &mt N9 O &mt N0 P  &kp MINUS
-  &mt RA(RS(RA(RCMD))) TILDE  &kp A         &mt UP S    &kp D        &kp F     &kp G          &mt LG(F) H      &kp J     &kp K      &kp L    &kp SEMI  &mt RA(NUMBER_6) SQT
-  &kp LSHIFT                  &mt LEFT Z    &mt DOWN X  &mt RIGHT C  &kp V     &kp B          &mt RA(RC(S)) N  &kp M     &kp COMMA  &kp DOT  &kp FSLH  &kp RSHIFT
-                                                    &mo 2  &mt ESC SPACE  &mt LCMD BSPC       &mt RALT TAB  &mt RCTRL ENTER  &mo 3
+  &kp DEL                            &mt N1 Q      &mt N2 W    &mt N3 E     &mt N4 R  &mt N5 T       &mt N6 Y         &mt N7 U  &mt N8 I   &mt N9 O &mt N0 P  &kp MINUS
+  &mt RA(RS(RA(RCMD))) RA(NUMBER_6)  &kp A         &mt UP S    &kp D        &kp F     &kp G          &mt LG(F) H      &kp J     &kp K      &kp L    &kp SEMI  &mt TILDE SQT
+  &kp LSHIFT                         &mt LEFT Z    &mt DOWN X  &mt RIGHT C  &kp V     &kp B          &mt RA(RC(S)) N  &kp M     &kp COMMA  &kp DOT  &kp FSLH  &kp RSHIFT
+                                                           &mo 2  &mt ESC SPACE  &mt LCMD BSPC       &mt RALT TAB  &mt RCTRL ENTER  &mo 3
             >;
         };
 
@@ -145,9 +145,9 @@ win_layer {
             //                         (ESC) (LCTRL)   (RALT)(RCTRL)
             
             bindings = <
-  &kp DEL      &mt N1 Q    &mt N2 W    &mt N3 E      &mt N4 R  &mt N5 T         &mt N6 Y     &mt N7 U  &mt N8 I   &mt N9 O  &mt N0 P  &kp MINUS
-  &zed_em_kay  &kp A       &mt UP S    &kp D         &kp F     &kp  G           &mt LC(F) H  &kp J     &kp K      &kp L     &kp SEMI  &mt SQT TILDE
-  &kp LSHIFT   &mt LEFT Z  &mt DOWN X  &mt RIGHT C   &kp V     &kp  B           &kp N        &kp M     &kp COMMA  &kp DOT   &kp FSLH  &kp RSHIFT
+  &kp DEL       &mt N1 Q    &mt N2 W    &mt N3 E      &mt N4 R  &mt N5 T         &mt N6 Y     &mt N7 U  &mt N8 I   &mt N9 O  &mt N0 P  &kp MINUS
+  &section_key  &kp A       &mt UP S    &kp D         &kp F     &kp  G           &mt LC(F) H  &kp J     &kp K      &kp L     &kp SEMI  &mt SQT TILDE
+  &kp LSHIFT    &mt LEFT Z  &mt DOWN X  &mt RIGHT C   &kp V     &kp  B           &kp N        &kp M     &kp COMMA  &kp DOT   &kp FSLH  &kp RSHIFT
                                                  &mo 2  &mt ESC SPACE  &mt LCTRL BSPC         &mt RALT TAB &mt RCTRL ENTER  &mo 3
             >;
         };
