@@ -192,16 +192,16 @@ win_layer {
             label = "CSGO";
 
             // _____________________________________   _____________________________________
-            // | ESC |  1  |  2  |  3  |  4  |  5  |   |VOLUP| F1  | F2  |     |     | DEF |
-            // | TAB |  F  |  Q  |  W  |  E  |  R  |   |VOLDN| ALL |TEAMS|     |     | DEF |
-            // |LSHFT|LCTRL|  A  |  S  |  D  |  G  |   |VMUTE|     |     |     |     | DEF |
-            //                   |  B  |  3  |SPACE|   |CSGO |CSGO |CSGO |
+            // | ESC |  5  |  1  |  2  |  3  |  4  |   |VOLUP| F1  | F2  |     |     |CSGO |
+            // | TAB |     |  Q  |  W  |  E  |  R  |   |VOLDN| ALL |TEAMS|     |     |CSGO |
+            // |LSHFT|LCTRL|  A  |  S  |  D  |  G  |   |VMUTE|     |     |     |     |CSGO |
+            //                   |  B  |SPACE|  F  |   |     |     |     |
 
             bindings = <
-&kp ESC     &kp N1      &kp N2  &kp N3  &kp N4  &kp N5      &kp C_VOL_UP  &kp F1  &kp F2  &none  &none  &tog 4
-&kp TAB     &kp F       &kp Q   &kp W   &kp E   &kp R       &kp C_VOL_DN  &kp Y   &kp U   &none  &none  &tog 4
-&kp LSHFT   &kp LCTRL  &kp A   &kp S   &kp D   &kp G       &kp C_MUTE    &none   &none   &none  &none  &tog 4
-                              &kp B  &kp N3  &kp SPACE      &tog 4  &tog 4  &tog 4
+&kp ESC     &kp N5     &kp N1  &kp N2  &kp N3  &kp N4      &kp C_VOL_UP  &kp F1  &kp F2  &none  &none  &tog 4
+&kp TAB     &none      &kp Q   &kp W   &kp E   &kp R       &kp C_VOL_DN  &kp Y   &kp U   &none  &none  &tog 4
+&kp LCTRL   &kp LSHFT  &kp A   &kp S   &kp D   &kp G       &kp C_MUTE    &none   &none   &none  &none  &tog 4
+                             &kp B  &kp SPACE  &kp F       &none  &none  &none
             >;
         };
 
