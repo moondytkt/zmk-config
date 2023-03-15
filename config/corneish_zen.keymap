@@ -95,9 +95,11 @@
             label = "ZM_section_key";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
             bindings
                 = <&macro_press &kp LALT>
-                , <&macro_tap &kp N2 &kp N1>
+                , <&macro_tap &kp N0 &kp N1 &kp N6 &kp N7>
                 , <&macro_release &kp LALT>
                 ;
         };
@@ -146,7 +148,7 @@ win_layer {
             
             bindings = <
   &kp DEL       &mt N1 Q    &mt N2 W    &mt N3 E      &mt N4 R  &mt N5 T         &mt N6 Y     &mt N7 U  &mt N8 I   &mt N9 O  &mt N0 P  &kp MINUS
-  &section_key  &kp A       &mt UP S    &kp D         &kp F     &kp  G           &mt LC(F) H  &kp J     &kp K      &kp L     &kp SEMI  &mt SQT TILDE
+  &section_key  &kp A       &mt UP S    &kp D         &kp F     &kp  G           &mt LC(F) H  &kp J     &kp K      &kp L     &kp SEMI  &mt GRAVE SQT
   &kp LSHIFT    &mt LEFT Z  &mt DOWN X  &mt RIGHT C   &kp V     &kp  B           &kp N        &kp M     &kp COMMA  &kp DOT   &kp FSLH  &kp RSHIFT
                                                  &mo 2  &mt ESC SPACE  &mt LCTRL BSPC         &mt RALT TAB &mt RCTRL ENTER  &mo 3
             >;
@@ -191,15 +193,15 @@ win_layer {
 
             // _____________________________________   _____________________________________
             // | ESC |  1  |  2  |  3  |  4  |  5  |   |VOLUP| F1  | F2  |     |     | DEF |
-            // | TAB |  G  |  Q  |  W  |  E  |  R  |   |VOLDN| ALL |TEAMS|     |     | DEF |
-            // |LCTRL|LSHFT|  A  |  S  |  D  |  F  |   |VMUTE|     |     |     |     | DEF |
-            //                   |  B  |SPACE| TAB |   |CSGO |CSGO |CSGO |
+            // | TAB |  F  |  Q  |  W  |  E  |  R  |   |VOLDN| ALL |TEAMS|     |     | DEF |
+            // |LSHFT|LCTRL|  A  |  S  |  D  |  G  |   |VMUTE|     |     |     |     | DEF |
+            //                   |  B  |  3  |SPACE|   |CSGO |CSGO |CSGO |
 
             bindings = <
 &kp ESC     &kp N1      &kp N2  &kp N3  &kp N4  &kp N5      &kp C_VOL_UP  &kp F1  &kp F2  &none  &none  &tog 4
-&kp TAB     &kp G       &kp Q   &kp W   &kp E   &kp R       &kp C_VOL_DN  &kp Y   &kp U   &none  &none  &tog 4
-&kp LCTRL   &kp LSHIFT  &kp A   &kp S   &kp D   &kp F       &kp C_MUTE    &none   &none   &none  &none  &tog 4
-                                &kp B  &kp SPACE  &kp G      &tog 4  &tog 4  &tog 4
+&kp TAB     &kp F       &kp Q   &kp W   &kp E   &kp R       &kp C_VOL_DN  &kp Y   &kp U   &none  &none  &tog 4
+&kp LSHFT   &kp LCTRL  &kp A   &kp S   &kp D   &kp G       &kp C_MUTE    &none   &none   &none  &none  &tog 4
+                              &kp B  &kp N3  &kp SPACE      &tog 4  &tog 4  &tog 4
             >;
         };
 
