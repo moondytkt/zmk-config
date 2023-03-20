@@ -122,15 +122,15 @@
             label = "BASE";
 
             // _____________________________________   _____________________________________
-            // | DEL |Q (1)|W (2)|E (3)|R (4)|T (5)|   |Y (6)|U (7)|I (8)|O (9)|P (0)|  -  |
+            // | DEL |Q (1)|W (2)|E (3)|R (4)|T (5)|   |Y (6)|U (7)|I (8)|O (9)|P (0)|- (=)|
             // |MEGA§|  A  |S(UP)|  D  |  F  |  G  |   |H (F)|  J  |  K  |  L  |  ;  |' (`)|
             // |LSHFT|Z(LT)|X(DN)|C(RT)|  V  |  B  |   |N (S)|  M  |  ,  |  .  |  /  |RSHFT|
             //                   | NUM | SPC |BSPC |   | TAB | ENT | SYM |
             //                          (ESC) (LCMD)   (RALT)(RCTRL)
             
             bindings = <
-  &kp DEL                            &mt N1 Q      &mt N2 W    &mt N3 E     &mt N4 R  &mt N5 T       &mt N6 Y         &mt N7 U  &mt N8 I   &mt N9 O &mt N0 P  &kp MINUS
-  &mt RA(RS(RA(RCMD))) RA(NUMBER_6)  &kp A         &mt UP S    &kp D        &kp F     &kp G          &mt LG(F) H      &kp J     &kp K      &kp L    &kp SEMI  &mt TILDE SQT
+  &kp DEL                            &mt N1 Q      &mt N2 W    &mt N3 E     &mt N4 R  &mt N5 T       &mt N6 Y         &mt N7 U  &mt N8 I   &mt N9 O &mt N0 P  &mt EQUAL MINUS
+  &mt RA(RS(RA(RCMD))) RA(NUMBER_6)  &kp A         &mt UP S    &kp D        &kp F     &kp G          &mt LG(F) H      &kp J     &kp K      &kp L    &kp SEMI  &mt GRAVE SQT
   &kp LSHIFT                         &mt LEFT Z    &mt DOWN X  &mt RIGHT C  &kp V     &kp B          &mt RA(RC(S)) N  &kp M     &kp COMMA  &kp DOT  &kp FSLH  &kp RSHIFT
                                                            &mo 2  &mt ESC SPACE  &mt LCMD BSPC       &mt RALT TAB  &mt RCTRL ENTER  &mo 3
             >;
@@ -140,14 +140,14 @@ win_layer {
             label = "WIN";
 
             // _____________________________________   _____________________________________
-            // | DEL |Q (1)|W (2)|E (3)|R (4)|T (5)|   |Y (6)|U (7)|I (8)|O (9)|P (0)|  -  |
+            // | DEL |Q (1)|W (2)|E (3)|R (4)|T (5)|   |Y (6)|U (7)|I (8)|O (9)|P (0)|- (=)|
             // | (§) |  A  |S(UP)|  D  |  F  |  G  |   |H (F)|  J  |  K  |  L  |  ;  | '(`)|
             // |LSHFT|Z(LT)|X(DN)|C(RT)|  V  |  B  |   |N (S)|  M  |  ,  |  .  |  /  |RSHFT|
             //                   | NUM | SPC |BSPC |   | TAB | ENT | SYM |
             //                         (ESC) (LCTRL)   (RALT)(RCTRL)
             
             bindings = <
-  &kp DEL     &mt N1 Q    &mt N2 W    &mt N3 E      &mt N4 R  &mt N5 T         &mt N6 Y     &mt N7 U  &mt N8 I   &mt N9 O  &mt N0 P  &kp MINUS
+  &kp DEL     &mt N1 Q    &mt N2 W    &mt N3 E      &mt N4 R  &mt N5 T         &mt N6 Y     &mt N7 U  &mt N8 I   &mt N9 O  &mt N0 P  &mt EQUAL MINUS
   &none       &kp A       &mt UP S    &kp D         &kp F     &kp  G           &mt LC(F) H  &kp J     &kp K      &kp L     &kp SEMI  &mt GRAVE SQT
   &kp LSHIFT  &mt LEFT Z  &mt DOWN X  &mt RIGHT C   &kp V     &kp  B           &kp N        &kp M     &kp COMMA  &kp DOT   &kp FSLH  &kp RSHIFT
                                   &mo 2  &mt ESC SPACE  &mt LCTRL BSPC         &mt RALT TAB &mt RCTRL ENTER  &mo 3
@@ -192,14 +192,14 @@ win_layer {
             label = "CSGO";
 
             // _____________________________________   _____________________________________
-            // | ESC |  5  |  1  |  2  |  3  |  4  |   |VOLUP| F1  | F2  |     |     |CSGO |
-            // | TAB |     |  Q  |  W  |  E  |  R  |   |VOLDN| ALL |TEAMS|     |     |CSGO |
+            // | ESC |  5  |  1  |  2  |  3  |  4  |   |VOLUP| F1  | ALL |     |     |CSGO |
+            // | TAB |  F  |  Q  |  W  |  E  |  R  |   |VOLDN| F2  |TEAMS|     |     |CSGO |
             // |LSHFT|LCTRL|  A  |  S  |  D  |  G  |   |VMUTE|     |     |     |     |CSGO |
-            //                   |  B  |SPACE|  F  |   |     |     |     |
+            //                   |  B  |SPACE|SPACE|   |     |     |     |
 
             bindings = <
-&kp ESC     &kp N5     &kp N1  &kp N2  &kp N3  &kp N4      &kp C_VOL_UP  &kp F1  &kp F2  &none  &none  &tog 4
-&kp TAB     &kp F      &kp Q   &kp W   &kp E   &kp R       &kp C_VOL_DN  &kp Y   &kp U   &none  &none  &tog 4
+&kp ESC     &kp N5     &kp N1  &kp N2  &kp N3  &kp N4      &kp C_VOL_UP  &kp F1  &kp Y  &none  &none  &tog 4
+&kp TAB     &kp F      &kp Q   &kp W   &kp E   &kp R       &kp C_VOL_DN  &kp F2  &kp U   &none  &none  &tog 4
 &kp LCTRL   &kp LSHFT  &kp A   &kp S   &kp D   &kp G       &kp C_MUTE    &none   &none   &none  &none  &tog 4
                           &kp B  &kp SPACE  &kp SPACE      &none  &none  &none
             >;
