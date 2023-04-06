@@ -127,7 +127,7 @@
         combo_EXP {
             timeout-ms = <50>;
             key-positions = <36 41>;
-            layers = <6>;
+            layers = <0 6>;
             bindings = <&tog 6>;
                        };
            };
