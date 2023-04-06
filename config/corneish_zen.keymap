@@ -82,51 +82,6 @@
             key-positions = <6 7 8>;
             bindings = <&tog 5>;
                        };
-                       
-                       
-//Experimental 5-col set up                       
-        combo_DEL {
-            timeout-ms = <50>;
-            key-positions = <1 2>;
-            layers = <6>;
-            bindings = <&kp DEL>;
-                       };
-                       
-        combo_MEGASEC {
-            timeout-ms = <50>;
-            key-positions = <13 14>;
-            layers = <6>;
-            bindings = <&mt RA(RS(RA(RCMD))) RA(NUMBER_6)>;
-                       };
-                       
-        combo_LSHFT {
-            timeout-ms = <50>;
-            key-positions = <25 26>;
-            layers = <6>;
-            bindings = <&kp LSHIFT>;
-                       };
-                       
-        combo_EQUALMINUS {
-            timeout-ms = <50>;
-            key-positions = <9 10>;
-            layers = <6>;
-            bindings = <&mt EQUAL MINUS>;
-                       };
-                       
-        combo_TOPDOTS {
-            timeout-ms = <50>;
-            key-positions = <21 22>;
-            layers = <6>;
-            bindings = <&mt GRAVE SQT>;
-                       };
-                       
-        combo_RSHFT {
-            timeout-ms = <50>;
-            key-positions = <33 34>;
-            layers = <6>;
-            bindings = <&kp RSHIFT>;
-                       };
-           };
     };
 
 // Hold-tap behaviors
