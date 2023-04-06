@@ -61,7 +61,6 @@
         combo_ToggleNUMright {
             timeout-ms = <50>;
             key-positions = <21 22>;
-            layers = <0 1 2 3>;
             bindings = <&mo 2>;
                      };
                        
@@ -94,16 +93,9 @@
                        
         combo_MEGASEC {
             timeout-ms = <50>;
-            key-positions = <13 14>;
+            key-positions = <13 25>;
             layers = <6>;
             bindings = <&mt RA(RS(RA(RCMD))) RA(NUMBER_6)>;
-                       };
-                       
-        combo_LSHFT {
-            timeout-ms = <50>;
-            key-positions = <25 26>;
-            layers = <6>;
-            bindings = <&kp LSHIFT>;
                        };
                        
         combo_EQUALMINUS {
@@ -115,16 +107,15 @@
                        
         combo_TOPDOTS {
             timeout-ms = <50>;
-            key-positions = <21 22>;
+            key-positions = <21 34>;
             layers = <6>;
             bindings = <&mt GRAVE SQT>;
                        };
                        
-        combo_RSHFT {
+        combo_EXP {
             timeout-ms = <50>;
-            key-positions = <33 34>;
-            layers = <6>;
-            bindings = <&kp RSHIFT>;
+            key-positions = <36 41>;
+            bindings = <&tog 6>;
                        };
            };
     };
@@ -199,14 +190,14 @@ win_layer {
 
             // _____________________________________   _____________________________________
             // |     |     |     |     |     |     |   |     |     |     |     |     |     |
-            // |     |  UP |     |     |VOLUP|VMUTE|   |briUP|     |     |     |     |     |
-            // |LEFT | DOWN|RIGHT|     |VOLDN| P_P |   |briDN|     |     |     |     |     |
+            // |     |     |     |     |VOLUP|VMUTE|   |briUP|     |     |     |     |     |
+            // |     |     |     |     |VOLDN| P_P |   |briDN|     |     |     |     |     |
             //                   | MED | MED | MED |   | MED | MED | MED |
 
             bindings = <
-&none     &none     &none      &none  &none         &none           &none                 &none  &none  &none  &none  &none
-&none     &kp UP    &none      &none  &kp C_VOL_UP  &kp C_MUTE      &kp C_BRIGHTNESS_INC  &none  &none  &none  &none  &none
-&kp LEFT  &kp DOWN  &kp RIGHT  &none  &kp C_VOL_DN  &kp C_PP        &kp C_BRIGHTNESS_DEC  &none  &none  &none  &none  &none
+&none  &none  &none  &none  &none         &none           &none                 &none  &none  &none  &none  &none
+&none  &none  &none  &none  &kp C_VOL_UP  &kp C_MUTE      &kp C_BRIGHTNESS_INC  &none  &none  &none  &none  &none
+&none  &none  &none  &none  &kp C_VOL_DN  &kp C_PP        &kp C_BRIGHTNESS_DEC  &none  &none  &none  &none  &none
                                         &tog 3  &tog 3  &tog 3      &tog 3  &tog 3  &tog 3
             >;
         };
@@ -215,16 +206,16 @@ win_layer {
             label = "CSGO";
 
             // _____________________________________   _____________________________________
-            // | ESC |  5  |  1  |  2  |  3  |  4  |   |VOLUP| F1  | ALL |     |     |CSGO |
-            // | TAB |  F  |  Q  |  W  |  E  |  R  |   |VOLDN| F2  |TEAMS|     |     |CSGO |
-            // |LSHFT|LCTRL|  A  |  S  |  D  |  G  |   |VMUTE|     |     |     |     |CSGO |
-            //                   |  B  |SPACE|SPACE|   |     |     |     |
+            // |     |  5  |  1  |  2  |  3  |  4  |   |VOLUP| F1  | ALL |     | ESC |     |
+            // |     | TAB |  Q  |  W  |  E  |  R  |   |VOLDN| F2  |TEAMS|     |     |     |
+            // |     |LCTRL|  A  |  S  |  D  |  G  |   |VMUTE|     |     |     |     |     |
+            //                   |LSHFT|SPACE|F (B)|   |     |     |     |
 
             bindings = <
-&kp ESC     &kp N5     &kp N1  &kp N2  &kp N3  &kp N4      &kp C_VOL_UP  &kp F1  &kp Y  &none  &none  &tog 4
-&kp TAB     &kp F      &kp Q   &kp W   &kp E   &kp R       &kp C_VOL_DN  &kp F2  &kp U   &none  &none  &tog 4
-&kp LCTRL   &kp LSHFT  &kp A   &kp S   &kp D   &kp G       &kp C_MUTE    &none   &none   &none  &none  &tog 4
-                          &kp B  &kp SPACE  &kp SPACE      &none  &none  &none
+&kp ESC     &kp N5     &kp N1  &kp N2  &kp N3  &kp N4        &kp C_VOL_UP  &kp F1  &kp Y  &none  &none  &tog 4
+&kp TAB     &kp F      &kp Q   &kp W   &kp E   &kp R         &kp C_VOL_DN  &kp F2  &kp U   &none  &none  &tog 4
+&kp LCTRL   &kp LSHFT  &kp A   &kp S   &kp D   &mt F G       &kp C_MUTE    &none   &none   &none  &none  &tog 4
+                            &kp B  &kp SPACE  &kp SPACE      &none  &none  &none
             >;
         };
 
@@ -250,16 +241,16 @@ exp_layer {
 
             // _____________________________________   _____________________________________
             // |     |Q (1)|W (2)|E (3)|R (4)|T (5)|   |Y (6)|U (7)|I (8)|O (9)|P (0)|     |
-            // |     |  A  |S(UP)|  D  |  F  |  G  |   |H (F)|  J  |  K  |  L  |  ;  |     |
-            // |     |Z(LT)|X(DN)|C(RT)|  V  |  B  |   |N (S)|  M  |  ,  |  .  |  /  |     |
+            // |     |  A  |  S  |D(UP)|  F  |  G  |   |H (F)|  J  |  K  |  L  |  ;  |     |
+            // |     |Z SFT|X(LT)|C(DN)|V(RT)|  B  |   |N (S)|  M  |  ,  |  .  |/ SFT|     |
             //                   | NUM | SPC |BSPC |   | TAB | ENT | SYM |
             //                          (ESC) (LCMD)   (RALT)(RCTRL)
             
             bindings = <
-  &none  &mt N1 Q    &mt N2 W    &mt N3 E     &mt N4 R  &mt N5 T       &mt N6 Y         &mt N7 U  &mt N8 I   &mt N9 O &mt N0 P  &none
-  &none  &kp A       &mt UP S    &kp D        &kp F     &kp G          &mt LG(F) H      &kp J     &kp K      &kp L    &kp SEMI  &none
-  &none  &mt LEFT Z  &mt DOWN X  &mt RIGHT C  &kp V     &kp B          &mt RA(RC(S)) N  &kp M     &kp COMMA  &kp DOT  &kp FSLH  &none
-                             &mo 2  &mt ESC SPACE  &mt LCMD BSPC       &mt RALT TAB  &mt RCTRL ENTER  &mo 3
+  &none     &mt N1 Q     &mt N2 W    &mt N3 E    &mt N4 R     &mt N5 T       &mt N6 Y         &mt N7 U  &mt N8 I   &mt N9 O &mt N0 P           &none
+  &none     &kp A        &kp S       &mt UP D    &kp F        &kp G          &mt LG(F) H      &kp J     &kp K      &kp L    &kp SEMI           &none
+  &none     &mt LSHFT Z  &mt LEFT X  &mt DOWN C  &mt RIGHT V  &kp B          &mt RA(RC(S)) N  &kp M     &kp COMMA  &kp DOT  &mt RSHFT FSLH     &none
+                                   &mo 2  &mt ESC SPACE  &mt LCMD BSPC       &mt RALT TAB  &mt RCTRL ENTER  &mo 3
             >;
         };
     };
