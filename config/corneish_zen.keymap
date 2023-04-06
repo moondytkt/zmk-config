@@ -89,11 +89,11 @@
 //Experimental 5-col set up                       
         combo_DEL {
             timeout-ms = <50>;
-            key-positions = <1 2>;
+            key-positions = <13 2>;
             layers = <6>;
             bindings = <&kp DEL>;
                        };
-                       
+                      
         combo_MEGASEC {
             timeout-ms = <50>;
             key-positions = <13 14>;
@@ -101,16 +101,25 @@
             bindings = <&mt RA(RS(RA(RCMD))) RA(NUMBER_6)>;
                        };
                        
+        combo_ToggleMED2left {
+            timeout-ms = <50>;
+            key-positions = <14 25>;
+            layers = <6>;
+            bindings = <&mo 8>;
+                     };
+                       
         combo_EQUALMINUS {
             timeout-ms = <50>;
-            key-positions = <9 10>;
+            key-positions = <9 22>;
             layers = <6>;
             bindings = <&mt EQUAL MINUS>;
                        };
-                       
+                     
+        //Placeholder for key-positions = <21 34>;                     
+                     
         combo_ToggleNUM2right {
             timeout-ms = <50>;
-            key-positions = <21 22>;
+            key-positions = <21 34>;
             layers = <6>;
             bindings = <&mo 7>;
                      };
@@ -244,8 +253,8 @@ exp_layer {
 
             // _____________________________________   _____________________________________
             // |     |Q (1)|W (2)|E (3)|R (4)|T (5)|   |Y (6)|U (7)|I (8)|O (9)|P (0)|     |
-            // |     |  A  |  S  |D(UP)|  F  |  G  |   |H (F)|  J  |  K  |  L  |; (')|     |
-            // |     |Z SFT|X(LT)|C(DN)|V(RT)|  B  |   |N (S)|  M  |  ,  |  .  |/ SFT|     |
+            // |     |  A  |  S  |  D  |  F  |  G  |   |H (F)|  J  |  K  |  L  |; (')|     |
+            // |     |Z SFT|  X  |  C  |  V  |  B  |   |N (S)|  M  |  ,  |  .  |/ SFT|     |
             //                   | NUM | SPC |BSPC |   | TAB | ENT | SYM |
             //                          (ESC) (LCMD)   (RALT)(RCTRL)
             
@@ -277,16 +286,16 @@ num2_layer {
             label = "MEDIA2";
 
             // _____________________________________   _____________________________________
-            // |     |     |     |     |     |     |   |     |     |     |     |     |     |
-            // |     |     |     |     |VOLUP|VMUTE|   |briUP|     |     |     |     |     |
-            // |     |     |     |     |VOLDN| P_P |   |briDN|     |     |     |     |     |
-            //                   | MED | MED | MED |   | MED | MED | MED |
+            // |     |     |     |     |     |     |   |VOLUP|briUP|     |     |     |     |
+            // |     |     |     |  UP |     |     |   |VOLDN|briDN|     |     |     |     |
+            // |     |     | LEFT| DOWN|RIGHT|     |   |VMUTE|     |     |     |     |     |
+            //                   | MED | MED | MED |   | P_P |     |     |
 
             bindings = <
-&none  &none  &none  &none  &none         &none           &none                 &none  &none  &none  &none  &none
-&none  &none  &none  &none  &kp C_VOL_UP  &kp C_MUTE      &kp C_BRIGHTNESS_INC  &none  &none  &none  &none  &none
-&none  &none  &none  &none  &kp C_VOL_DN  &kp C_PP        &kp C_BRIGHTNESS_DEC  &none  &none  &none  &none  &none
-                              &tog 8  &tog 8  &tog 8      &tog 8  &tog 8  &tog 8
+&none  &none  &none     &none     &none      &none        &kp C_VOL_UP  &kp C_BRIGHTNESS_INC  &none  &none  &none  &none
+&none  &none  &none     &kp UP    &none      &none        &kp C_VOL_DN  &kp C_BRIGHTNESS_DEC  &none  &none  &none  &none
+&none  &none  &kp LEFT  &kp DOWN  &kp RIGHT  &none        &kp C_MUTE    &none  &none  &none  &none  &none
+                            &tog 8  &tog 8  &tog 8        &kp C_PP  &tog 8  &tog 8
             >;
         };
     };
