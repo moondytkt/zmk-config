@@ -82,6 +82,7 @@
             key-positions = <6 7 8>;
             bindings = <&tog 5>;
                        };
+            };
     };
 
 // Hold-tap behaviors
