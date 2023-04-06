@@ -255,7 +255,7 @@ exp_layer {
             // |     |Q (1)|W (2)|E (3)|R (4)|T (5)|   |Y (6)|U (7)|I (8)|O (9)|P (0)|     |
             // |     |  A  |  S  |  D  |  F  |  G  |   |H (F)|  J  |  K  |  L  |; (')|     |
             // |     |Z SFT|  X  |  C  |  V  |  B  |   |N (S)|  M  |  ,  |  .  |/ SFT|     |
-            //                   | NUM | SPC |BSPC |   | TAB | ENT | SYM |
+            //                   | NUM2| SPC |BSPC |   | TAB | ENT | SYM2|
             //                          (ESC) (LCMD)   (RALT)(RCTRL)
             
             bindings = <
@@ -269,15 +269,15 @@ num2_layer {
             label = "NUM2";
 
             // _____________________________________   _____________________________________
-            // |LCTRL|     |     |  {  |  }  |     |   |     |  7  |  8  |  9  |  0  |  -  |
-            // |LALT |     |     |  (  |  )  |     |   |     |  4  |  5  |  6  |  *  |  +  |
-            // |LSHFT|     |     |  [  |  ]  |     |   |     |  1  |  2  |  3  |  /  |  =  |
-            //                   | NUM | SPC |BPSC |   | TAB | ENT |  0  |
+            // |     |LCTRL|     |  {  |  }  |  +  |   |  -  |  7  |  8  |  9  |  0  |     |
+            // |     |LALT |     |  (  |  )  |  *  |   |  /  |  4  |  5  |  6  |     |     |
+            // |     |LSHFT|     |  [  |  ]  |  =  |   |     |  1  |  2  |  3  |     |     |
+            //                   | NUM2| SPC |BPSC |   | TAB | ENT |  0  |
 
             bindings = <
-&kp LCTRL   &none  &none  &kp LBRC   &kp RBRC  &none        &kp N6  &kp N7  &kp N8  &kp N9  &kp N0     &kp MINUS
-&kp LALT    &none  &none  &kp LPAR   &kp RPAR  &none        &none   &kp N4  &kp N5  &kp N6  &kp STAR   &kp PLUS
-&kp LSHIFT  &none  &none  &kp LBKT   &kp RBKT  &none        &none   &kp N1  &kp N2  &kp N3  &kp SLASH  &kp EQUAL
+&none    &kp LCTRL   &none  &kp LBRC   &kp RBRC  &kp PLUS         &kp MINUS  &kp N7  &kp N8  &kp N9  &kp N0        &none
+&none    &kp LALT    &none  &kp LPAR   &kp RPAR  &kp STAR         &kp SLASH  &kp N4  &kp N5  &kp N6  &kp STAR      &none
+&none    &kp LSHIFT  &none  &kp LBKT   &kp RBKT  &kp EQUAL        &none      &kp N1  &kp N2  &kp N3  &kp SLASH     &none
                          &tog 7  &kp SPACE  &kp BSPC        &kp TAB  &kp ENTER  &kp N0
             >;
         };
@@ -287,15 +287,15 @@ num2_layer {
 
             // _____________________________________   _____________________________________
             // |     |     |     |     |     |     |   |VOLUP|briUP|     |     |     |     |
-            // |     |     |     |  UP |     |     |   |VOLDN|briDN|     |     |     |     |
-            // |     |     | LEFT| DOWN|RIGHT|     |   |VMUTE|     |     |     |     |     |
+            // |     |     |     |  UP |     |SUPER|   |VOLDN|briDN|     |     |     |     |
+            // |     | MEGA| LEFT| DOWN|RIGHT| MEH |   |VMUTE|     |     |     |     |     |
             //                   | MED | MED | MED |   | P_P |     |     |
 
             bindings = <
-&none  &none  &none     &none     &none      &none        &kp C_VOL_UP  &kp C_BRIGHTNESS_INC  &none  &none  &none  &none
-&none  &none  &none     &kp UP    &none      &none        &kp C_VOL_DN  &kp C_BRIGHTNESS_DEC  &none  &none  &none  &none
-&none  &none  &kp LEFT  &kp DOWN  &kp RIGHT  &none        &kp C_MUTE    &none  &none  &none  &none  &none
-                            &tog 8  &tog 8  &tog 8        &kp C_PP  &tog 8  &tog 8
+&none  &none                 &none     &none     &none      &none                  &kp C_VOL_UP  &kp C_BRIGHTNESS_INC  &none  &none  &none  &none
+&none  &none                 &none     &kp UP    &none      &kp RA(RS(RCTRL))      &kp C_VOL_DN  &kp C_BRIGHTNESS_DEC  &none  &none  &none  &none
+&none  &kp RA(RS(RA(RCMD)))  &kp LEFT  &kp DOWN  &kp RIGHT  &kp RA(RCTRL)          &kp C_MUTE    &none  &none  &none  &none  &none
+                                                       &tog 8  &tog 8  &tog 8      &kp C_PP  &tog 8  &tog 8
             >;
         };
     };
