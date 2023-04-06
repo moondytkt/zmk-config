@@ -13,6 +13,8 @@
 #define CSGO 4
 #define STTG 5
 #define EXP 6
+#define NUM 7
+#define MEDIA 8
 
 / {
     chosen {
@@ -60,7 +62,8 @@
                      
         combo_ToggleNUMright {
             timeout-ms = <50>;
-            key-positions = <21 22>;
+            key-positions = <21 34>;
+            layers = <0 1>;
             bindings = <&mo 2>;
                      };
                        
@@ -93,7 +96,7 @@
                        
         combo_MEGASEC {
             timeout-ms = <50>;
-            key-positions = <13 25>;
+            key-positions = <13 14>;
             layers = <6>;
             bindings = <&mt RA(RS(RA(RCMD))) RA(NUMBER_6)>;
                        };
@@ -105,12 +108,12 @@
             bindings = <&mt EQUAL MINUS>;
                        };
                        
-        combo_TOPDOTS {
+        combo_ToggleNUM2right {
             timeout-ms = <50>;
-            key-positions = <21 34>;
+            key-positions = <21 22>;
             layers = <6>;
-            bindings = <&mt GRAVE SQT>;
-                       };
+            bindings = <&mo 7>;
+                     };
                        
         combo_EXP {
             timeout-ms = <50>;
@@ -241,16 +244,49 @@ exp_layer {
 
             // _____________________________________   _____________________________________
             // |     |Q (1)|W (2)|E (3)|R (4)|T (5)|   |Y (6)|U (7)|I (8)|O (9)|P (0)|     |
-            // |     |  A  |  S  |D(UP)|  F  |  G  |   |H (F)|  J  |  K  |  L  |  ;  |     |
+            // |     |  A  |  S  |D(UP)|  F  |  G  |   |H (F)|  J  |  K  |  L  |; (')|     |
             // |     |Z SFT|X(LT)|C(DN)|V(RT)|  B  |   |N (S)|  M  |  ,  |  .  |/ SFT|     |
             //                   | NUM | SPC |BSPC |   | TAB | ENT | SYM |
             //                          (ESC) (LCMD)   (RALT)(RCTRL)
             
             bindings = <
   &none     &mt N1 Q     &mt N2 W    &mt N3 E    &mt N4 R     &mt N5 T       &mt N6 Y         &mt N7 U  &mt N8 I   &mt N9 O &mt N0 P           &none
-  &none     &kp A        &kp S       &mt UP D    &kp F        &kp G          &mt LG(F) H      &kp J     &kp K      &kp L    &kp SEMI           &none
+  &none     &kp A        &kp S       &mt UP D    &kp F        &kp G          &mt LG(F) H      &kp J     &kp K      &kp L    &mt SEMI SQT       &none
   &none     &mt LSHFT Z  &mt LEFT X  &mt DOWN C  &mt RIGHT V  &kp B          &mt RA(RC(S)) N  &kp M     &kp COMMA  &kp DOT  &mt RSHFT FSLH     &none
-                                   &mo 2  &mt ESC SPACE  &mt LCMD BSPC       &mt RALT TAB  &mt RCTRL ENTER  &mo 3
+                                   &mo 7  &mt ESC SPACE  &mt LCMD BSPC       &mt RALT TAB  &mt RCTRL ENTER  &mo 8
+            >;
+        };
+num2_layer {
+            label = "NUM2";
+
+            // _____________________________________   _____________________________________
+            // |LCTRL|     |     |  {  |  }  |     |   |     |  7  |  8  |  9  |  0  |  -  |
+            // |LALT |     |     |  (  |  )  |     |   |     |  4  |  5  |  6  |  *  |  +  |
+            // |LSHFT|     |     |  [  |  ]  |     |   |     |  1  |  2  |  3  |  /  |  =  |
+            //                   | NUM | SPC |BPSC |   | TAB | ENT |  0  |
+
+            bindings = <
+&kp LCTRL   &none  &none  &kp LBRC   &kp RBRC  &none        &kp N6  &kp N7  &kp N8  &kp N9  &kp N0     &kp MINUS
+&kp LALT    &none  &none  &kp LPAR   &kp RPAR  &none        &none   &kp N4  &kp N5  &kp N6  &kp STAR   &kp PLUS
+&kp LSHIFT  &none  &none  &kp LBKT   &kp RBKT  &none        &none   &kp N1  &kp N2  &kp N3  &kp SLASH  &kp EQUAL
+                         &tog 7  &kp SPACE  &kp BSPC        &kp TAB  &kp ENTER  &kp N0
+            >;
+        };
+
+        media2_layer {
+            label = "MEDIA2";
+
+            // _____________________________________   _____________________________________
+            // |     |     |     |     |     |     |   |     |     |     |     |     |     |
+            // |     |     |     |     |VOLUP|VMUTE|   |briUP|     |     |     |     |     |
+            // |     |     |     |     |VOLDN| P_P |   |briDN|     |     |     |     |     |
+            //                   | MED | MED | MED |   | MED | MED | MED |
+
+            bindings = <
+&none  &none  &none  &none  &none         &none           &none                 &none  &none  &none  &none  &none
+&none  &none  &none  &none  &kp C_VOL_UP  &kp C_MUTE      &kp C_BRIGHTNESS_INC  &none  &none  &none  &none  &none
+&none  &none  &none  &none  &kp C_VOL_DN  &kp C_PP        &kp C_BRIGHTNESS_DEC  &none  &none  &none  &none  &none
+                              &tog 8  &tog 8  &tog 8      &tog 8  &tog 8  &tog 8
             >;
         };
     };
