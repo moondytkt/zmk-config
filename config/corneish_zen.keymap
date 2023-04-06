@@ -12,7 +12,6 @@
 #define MEDIA 3
 #define CSGO 4
 #define STTG 5
-#define EXP 6
 
 / {
     chosen {
@@ -82,6 +81,44 @@
             key-positions = <6 7 8>;
             bindings = <&tog 5>;
                        };
+                       
+                       
+//Experimental 5-col set up                       
+        combo_DEL {
+            timeout-ms = <50>;
+            key-positions = <1 2>;
+            bindings = <&kp DEL>;
+                       };
+                       
+        combo_MEGASEC {
+            timeout-ms = <50>;
+            key-positions = <13 14>;
+            bindings = <&mt RA(RS(RA(RCMD))) RA(NUMBER_6)>;
+                       };
+                       
+        combo_LSHFT {
+            timeout-ms = <50>;
+            key-positions = <25 26>;
+            bindings = <&kp LSHIFT>;
+                       };
+                       
+        combo_EQUALMINUS {
+            timeout-ms = <50>;
+            key-positions = <9 10>;
+            bindings = <&mt EQUAL MINUS>;
+                       };
+                       
+        combo_TOPDOTS {
+            timeout-ms = <50>;
+            key-positions = <21 34>;
+            bindings = <&mt GRAVE SQT>;
+                       };
+                       
+        combo_RSHFT {
+            timeout-ms = <50>;
+            key-positions = <33 34>;
+            bindings = <&kp RSHIFT>;
+                       };                       
             };
     };
 
@@ -101,17 +138,17 @@
             label = "BASE";
 
             // _____________________________________   _____________________________________
-            // | DEL |Q (1)|W (2)|E (3)|R (4)|T (5)|   |Y (6)|U (7)|I (8)|O (9)|P (0)|- (=)|
-            // |MEGA§|  A  |S(UP)|  D  |  F  |  G  |   |H (F)|  J  |  K  |  L  |  ;  |' (`)|
-            // |LSHFT|Z(LT)|X(DN)|C(RT)|  V  |  B  |   |N (S)|  M  |  ,  |  .  |  /  |RSHFT|
+            // |     |Q (1)|W (2)|E (3)|R (4)|T (5)|   |Y (6)|U (7)|I (8)|O (9)|P (0)|     |
+            // |     |  A  |S(UP)|  D  |  F  |  G  |   |H (F)|  J  |  K  |  L  |  ;  |     |
+            // |     |Z(LT)|X(DN)|C(RT)|  V  |  B  |   |N (S)|  M  |  ,  |  .  |  /  |     |
             //                   | NUM | SPC |BSPC |   | TAB | ENT | SYM |
             //                          (ESC) (LCMD)   (RALT)(RCTRL)
             
             bindings = <
-  &kp DEL                            &mt N1 Q      &mt N2 W    &mt N3 E     &mt N4 R  &mt N5 T       &mt N6 Y         &mt N7 U  &mt N8 I   &mt N9 O &mt N0 P  &mt EQUAL MINUS
-  &mt RA(RS(RA(RCMD))) RA(NUMBER_6)  &kp A         &mt UP S    &kp D        &kp F     &kp G          &mt LG(F) H      &kp J     &kp K      &kp L    &kp SEMI  &mt GRAVE SQT
-  &kp LSHIFT                         &mt LEFT Z    &mt DOWN X  &mt RIGHT C  &kp V     &kp B          &mt RA(RC(S)) N  &kp M     &kp COMMA  &kp DOT  &kp FSLH  &kp RSHIFT
-                                                           &mo 2  &mt ESC SPACE  &mt LCMD BSPC       &mt RALT TAB  &mt RCTRL ENTER  &mo 3
+  &none  &mt N1 Q    &mt N2 W    &mt N3 E     &mt N4 R  &mt N5 T       &mt N6 Y         &mt N7 U  &mt N8 I   &mt N9 O &mt N0 P  &none
+  &none  &kp A       &mt UP S    &kp D        &kp F     &kp G          &mt LG(F) H      &kp J     &kp K      &kp L    &kp SEMI  &none
+  &none  &mt LEFT Z  &mt DOWN X  &mt RIGHT C  &kp V     &kp B          &mt RA(RC(S)) N  &kp M     &kp COMMA  &kp DOT  &kp FSLH  &none
+                             &mo 2  &mt ESC SPACE  &mt LCMD BSPC       &mt RALT TAB  &mt RCTRL ENTER  &mo 3
             >;
         };
 
@@ -167,23 +204,6 @@ win_layer {
             >;
         };
 
-        csgo_layer {
-            label = "CSGO";
-
-            // _____________________________________   _____________________________________
-            // | ESC |  5  |  1  |  2  |  3  |  4  |   |VOLUP| F1  | ALL |     |     |CSGO |
-            // | TAB |  F  |  Q  |  W  |  E  |  R  |   |VOLDN| F2  |TEAMS|     |     |CSGO |
-            // |LSHFT|LCTRL|  A  |  S  |  D  |  G  |   |VMUTE|     |     |     |     |CSGO |
-            //                   |  B  |SPACE|SPACE|   |     |     |     |
-
-            bindings = <
-&kp ESC     &kp N5     &kp N1  &kp N2  &kp N3  &kp N4      &kp C_VOL_UP  &kp F1  &kp Y  &none  &none  &tog 4
-&kp TAB     &kp F      &kp Q   &kp W   &kp E   &kp R       &kp C_VOL_DN  &kp F2  &kp U   &none  &none  &tog 4
-&kp LCTRL   &kp LSHFT  &kp A   &kp S   &kp D   &kp G       &kp C_MUTE    &none   &none   &none  &none  &tog 4
-                          &kp B  &kp SPACE  &kp SPACE      &none  &none  &none
-            >;
-        };
-
         sttg_layer {
             label = "STTG";
             
@@ -200,23 +220,6 @@ win_layer {
                               &bt BT_CLR    &bt BT_CLR    &bt BT_CLR             &tog 5  &tog 5  &tog 5                              
             >;
         };
-        
-exp_layer {
-            label = "EXP";
-
-            // _____________________________________   _____________________________________
-            // |     |Q (1)|W (2)|E (3)|R (4)|T (5)|   |Y (6)|U (7)|I (8)|O (9)|P (0)|     |
-            // |     |  A  |S(UP)|  D  |  F  |  G  |   |H (F)|  J  |  K  |  L  |  ;  |     |
-            // |     |Z(LT)|X(DN)|C(RT)|  V  |  B  |   |N (S)|  M  |  ,  |  .  |  /  |     |
-            //                   | NUM | SPC |BSPC |   | TAB | ENT | SYM |
-            //                          (ESC) (LCMD)   (RALT)(RCTRL)
-            
-            bindings = <
-  &none  &mt N1 Q    &mt N2 W    &mt N3 E     &mt N4 R  &mt N5 T       &mt N6 Y         &mt N7 U  &mt N8 I   &mt N9 O &mt N0 P  &none
-  &none  &kp A       &mt UP S    &kp D        &kp F     &kp G          &mt LG(F) H      &kp J     &kp K      &kp L    &kp SEMI  &none
-  &none  &mt LEFT Z  &mt DOWN X  &mt RIGHT C  &kp V     &kp B          &mt RA(RC(S)) N  &kp M     &kp COMMA  &kp DOT  &kp FSLH  &none
-                             &mo 2  &mt ESC SPACE  &mt LCMD BSPC       &mt RALT TAB  &mt RCTRL ENTER  &mo 3
-            >;
-        };
+       
     };
 };
