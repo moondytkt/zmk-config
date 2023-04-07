@@ -256,30 +256,30 @@ exp_layer {
             // |     |Q (1)|W (2)|E (3)|R (4)|T (5)|   |Y (6)|U (7)|I (8)|O (9)|P (0)|     |
             // |     |  A  |  S  |  D  |  F  |  G  |   |H (F)|  J  |  K  |  L  |; (')|     |
             // |     |Z SFT|  X  |  C  |  V  |  B  |   |N (S)|  M  |  ,  |  .  |/ SFT|     |
-            //                   | NUM2| SPC |BSPC |   | TAB | ENT | MED2|
+            //                   |NUM2 | SPC | BSPC|   | TAB | ENT | MED2|
             //                          (ESC) (LCMD)   (RALT)(RCTRL)
             
             bindings = <
-  &none     &mt N1 Q     &mt N2 W    &mt N3 E    &mt N4 R     &mt N5 T       &mt N6 Y         &mt N7 U  &mt N8 I   &mt N9 O &mt N0 P           &none
-  &none     &kp A        &kp S       &mt UP D    &kp F        &kp G          &mt LG(F) H      &kp J     &kp K      &kp L    &mt SEMI SQT       &none
-  &none     &mt LSHFT Z  &mt LEFT X  &mt DOWN C  &mt RIGHT V  &kp B          &mt RA(RC(S)) N  &kp M     &kp COMMA  &kp DOT  &mt RSHFT FSLH     &none
-                                   &mo 7  &mt ESC SPACE  &mt LCMD BSPC       &mt RALT TAB  &mt RCTRL ENTER  &mo 8
+  &none     &mt N1 Q     &mt N2 W  &mt N3 E  &mt N4 R  &mt N5 T       &mt N6 Y         &mt N7 U  &mt N8 I   &mt N9 O &mt N0 P           &none
+  &none     &kp A        &kp S     &kp D     &kp F     &kp G          &mt LG(F) H      &kp J     &kp K      &kp L    &mt SEMI SQT       &none
+  &none     &mt LSHFT Z  &kp X     &kp C     &kp V     &kp B          &mt RA(RC(S)) N  &kp M     &kp COMMA  &kp DOT  &mt RSHFT FSLH     &none
+                            &mo 7  &mt ESC SPACE  &mt LCMD BSPC       &mt RALT TAB  &mt RCTRL ENTER  &mo 8
             >;
         };
 number2_layer {
             label = "NUM2";
 
             // _____________________________________   _____________________________________
-            // |     |LCTRL|     |  {  |  }  |  +  |   |  -  |  7  |  8  |  9  |  0  |     |
+            // |     |LCTRL|     |  {  |  }  |  +  |   |  -  |  7  |  8  |  9  |     |     |
             // |     |LALT |     |  (  |  )  |  *  |   |  /  |  4  |  5  |  6  |     |     |
             // |     |LSHFT| LCMD|  [  |  ]  |  =  |   |     |  1  |  2  |  3  |     |     |
-            //                   | NUM2| SPC |BPSC |   | TAB | ENT |  0  |
+            //                   | NUM2| SPC | BPSC|   | TAB | ENT |  0  |
 
             bindings = <
-&none    &kp LCTRL   &none     &kp LBRC   &kp RBRC  &kp PLUS         &kp MINUS  &kp N7  &kp N8  &kp N9  &kp N0        &none
-&none    &kp LALT    &none     &kp LPAR   &kp RPAR  &kp STAR         &kp SLASH  &kp N4  &kp N5  &kp N6  &kp STAR      &none
-&none    &kp LSHIFT  &kp LCMD  &kp LBKT   &kp RBKT  &kp EQUAL        &none      &kp N1  &kp N2  &kp N3  &kp SLASH     &none
-                                  &tog 7  &kp SPACE  &kp BSPC        &kp TAB  &kp ENTER  &kp N0
+&none      &kp LCTRL   &none     &kp LBRC   &kp RBRC  &kp PLUS         &kp MINUS  &kp N7  &kp N8  &kp N9  &none       &none
+&none      &kp LALT    &none     &kp LPAR   &kp RPAR  &kp STAR         &kp SLASH  &kp N4  &kp N5  &kp N6  &none       &none
+&none      &kp LSHIFT  &kp LCMD  &kp LBKT   &kp RBKT  &kp EQUAL        &none      &kp N1  &kp N2  &kp N3  &none       &none
+                                    &tog 7  &kp SPACE  &kp BSPC        &kp TAB  &kp ENTER  &kp N0
             >;
         };
 
