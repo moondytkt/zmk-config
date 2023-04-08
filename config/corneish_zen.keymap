@@ -10,7 +10,7 @@
 #define WIN 1
 #define NMBRS 2
 #define MEDIA 3
-#define CSGO 4
+#define CS 4
 #define STTG 5
 
 / {
@@ -78,7 +78,6 @@
         combo_DEL {
             timeout-ms = <50>;
             key-positions = <13 2>;
-            layers = <6>;
             bindings = <&kp DEL>;
                        };
                        
@@ -87,14 +86,12 @@
         combo_ToggleMEDleft {
             timeout-ms = <50>;
             key-positions = <14 25>;
-            layers = <6>;
-            bindings = <&mo 8>;
+            bindings = <&mo 3>;
                      };
                        
         combo_EQUALMINUS {
             timeout-ms = <50>;
             key-positions = <9 22>;
-            layers = <6>;
             bindings = <&mt EQUAL MINUS>;
                        };
                      
@@ -103,8 +100,7 @@
         combo_ToggleNUM2right {
             timeout-ms = <50>;
             key-positions = <21 34>;
-            layers = <6>;
-            bindings = <&mo 7>;
+            bindings = <&mo 2>;
                      };
            };
     };
@@ -192,20 +188,20 @@ number_layer {
             >;
         };
 
-        csgo_layer {
-            label = "CSGO";
+        cs_layer {
+            label = "CS";
 
             // _____________________________________   _____________________________________
             // |     |  5  |  1  |  2  |  3  |  4  |   |VOLUP|  F1 | ALL |     |     |     |
-            // |     |  B  |  Q  |  W  |  E  |  R  |   |VOLDN|  F2 |TEAMS|     |     |     |
+            // |     | B F |  Q  |  W  |  E  |  R  |   |VOLDN|  F2 |TEAMS|     |     |     |
             // |     |LCTRL|  A  |  S  |  D  |  G  |   |VMUTE|  V  | ESC |     |     |     |
-            //                   |  F  |SPACE|LSHFT|   | TAB |     |     |
+            //                   |LSHFT|SPACE|LSHFT|   | TAB | ESC |     |
 
             bindings = <
-&kp ESC     &kp N5     &kp N1  &kp N2  &kp N3  &kp N4        &kp C_VOL_UP  &kp F1  &kp Y  &none  &none  &tog 4
-&kp TAB     &kp F      &kp Q   &kp W   &kp E   &kp R         &kp C_VOL_DN  &kp F2  &kp U   &none  &none  &tog 4
-&kp LCTRL   &kp LSHFT  &kp A   &kp S   &kp D   &mt F G       &kp C_MUTE    &none   &none   &none  &none  &tog 4
-                            &kp B  &kp SPACE  &kp SPACE      &none  &kp TAB  &none
+&none       &kp N5      &kp N1  &kp N2  &kp N3  &kp N4      &kp C_VOL_UP  &kp F1  &kp Y    &none  &none       &tog 4
+&none       &mt B F     &kp Q   &kp W   &kp E   &kp R       &kp C_VOL_DN  &kp F2  &kp U    &none  &none       &tog 4
+&none       &kp LCTRL   &kp A   &kp S   &kp D   &kp G       &kp C_MUTE    &kp V   &kp ESC  &none  &none       &tog 4
+                       &kp LSHFT  &kp SPACE  &kp LSHFT      &kp TAB  &kp ESC  &none
             >;
         };
 
@@ -213,19 +209,17 @@ number_layer {
             label = "STTG";
             
             // _____________________________________   _____________________________________
-            // | DEF | BT1 | BT2 | BT3 | BT4 | BT5 |   |     |     |     |     |     |     |
-            // | DEF | SET | SET | SET | SET | SET |   |     |SWTCH| BLE | USB |     |     |
-            // | DEF |     |     |     |     |     |   |     |     |     |     |     |     |
+            // |     | BT1 | BT2 | BT3 | BT4 | BT5 |   |     |     |     |     |     |     |
+            // |     |     |     |     |     |     |   | BLE | USB |SWTCH|     |     |     |
+            // |     |     |     |     |     |     |   |     |     |     |     |     |     |
             //                   |BTCLR|BTCLR|BTCLR|   | SET | SET | SET |
             
             bindings = <
 &none  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4      &none  &none  &none  &none  &none  &none
-&none  &tog 5        &tog 5        &tog 5        &tog 5        &tog 5            &none  &out OUT_TOG  &out OUT_BLE  &out OUT_USB  &none  &none
-&none  &none         &none         &none         &none         &none             &none  &none  &none  &none  &none  &none
-                              &bt BT_CLR    &bt BT_CLR    &bt BT_CLR             &tog 5  &tog 5  &tog 5                              
+&none  &none  &none  &none  &none  &none                                         &out OUT_BLE  &out OUT_USB  &out OUT_TOG  &none  &none  &none
+&none  &none  &none  &none  &none  &none                                         &none  &none  &none  &none  &none  &none
+                                     &bt BT_CLR    &bt BT_CLR    &bt BT_CLR      &tog 5  &tog 5  &tog 5                              
             >;
         };
-        
-
     };
 };
