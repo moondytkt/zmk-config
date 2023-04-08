@@ -75,8 +75,6 @@
             bindings = <&tog 5>;
                        };
 
-                       
-//Experimental 5-col set up                       
         combo_DEL {
             timeout-ms = <50>;
             key-positions = <13 2>;
@@ -123,8 +121,8 @@
     keymap {
         compatible = "zmk,keymap";
 
-exp_layer {
-            label = "EXP";
+base_layer {
+            label = "BASE";
 
             // _____________________________________   _____________________________________
             // |     |Q (1)|W (2)|E (3)|R (4)|T (5)|   |Y (6)|U (7)|I (8)|O (9)|P (0)|     |
@@ -145,17 +143,17 @@ win_layer {
             label = "WIN";
 
             // _____________________________________   _____________________________________
-            // | DEL |Q (1)|W (2)|E (3)|R (4)|T (5)|   |Y (6)|U (7)|I (8)|O (9)|P (0)|- (=)|
-            // |     |  A  |S(UP)|  D  |  F  |  G  |   |H (F)|  J  |  K  |  L  |  ;  | '(`)|
-            // |LSHFT|Z(LT)|X(DN)|C(RT)|  V  |  B  |   |N (S)|  M  |  ,  |  .  |  /  |RSHFT|
+            // |     |Q (1)|W (2)|E (3)|R (4)|T (5)|   |Y (6)|U (7)|I (8)|O (9)|P (0)|     |
+            // |     |  A  |  S  |  D  |  F  |  G  |   |H (F)|  J  |  K  |  L  |; (')|     |
+            // |     |Z(LT)|X(DN)|C(RT)|  V  |  B  |   |  N  |  M  |  ,  |  .  |  /  |     |
             //                   | NUM | SPC |BSPC |   | TAB | ENT | SYM |
-            //                         (ESC) (LCTRL)   (RALT)(RCTRL)
+            //                          (ESC) (LCTRL)   (RALT)(RCTRL)
             
             bindings = <
-  &kp DEL     &mt N1 Q    &mt N2 W    &mt N3 E      &mt N4 R  &mt N5 T         &mt N6 Y     &mt N7 U  &mt N8 I   &mt N9 O  &mt N0 P  &mt EQUAL MINUS
-  &none       &kp A       &mt UP S    &kp D         &kp F     &kp  G           &mt LC(F) H  &kp J     &kp K      &kp L     &kp SEMI  &mt GRAVE SQT
-  &kp LSHIFT  &mt LEFT Z  &mt DOWN X  &mt RIGHT C   &kp V     &kp  B           &kp N        &kp M     &kp COMMA  &kp DOT   &kp FSLH  &kp RSHIFT
-                                  &mo 2  &mt ESC SPACE  &mt LCTRL BSPC         &mt RALT TAB &mt RCTRL ENTER  &mo 3
+  &none      &mt N1 Q     &mt N2 W  &mt N3 E  &mt N4 R  &mt N5 T        &mt N6 Y     &mt N7 U  &mt N8 I   &mt N9 O  &mt N0 P            &none
+  &none      &kp A        &kp S     &kp D     &kp F     &kp G           &mt LC(F) H  &kp J     &kp K      &kp L     &mt SEMI SQT        &none
+  &none      &mt LSHFT Z  &kp X     &kp C     &kp V     &kp B           &kp N        &kp M     &kp COMMA  &kp DOT   &mt RSHFT FSLH      &none
+                            &mo 2  &mt ESC SPACE  &mt LCTRL BSPC        &mt RALT TAB &mt RCTRL ENTER  &mo 3
             >;
         };
 
@@ -165,14 +163,15 @@ number_layer {
             // _____________________________________   _____________________________________
             // |     |LCTRL|     |  {  |  }  |  +  |   |  -  |  7  |  8  |  9  |     |     |
             // |     |LALT |     |  (  |  )  |  *  |   |  /  |  4  |  5  |  6  |     |     |
-            // |     |LSHFT| LCMD|  [  |  ]  |  =  |   |     |  1  |  2  |  3  |     |     |
+            // |     |LSHFT|     |  [  |  ]  |  =  |   |     |  1  |  2  |  3  |     |     |
             //                   | NUM2| SPC | BPSC|   | TAB | ENT |  0  |
+            //                                (LCMD)
 
             bindings = <
 &none      &kp LCTRL   &none     &kp LBRC   &kp RBRC  &kp PLUS         &kp MINUS  &kp N7  &kp N8  &kp N9  &none       &none
 &none      &kp LALT    &none     &kp LPAR   &kp RPAR  &kp STAR         &kp SLASH  &kp N4  &kp N5  &kp N6  &none       &none
 &none      &kp LSHIFT  &kp LCMD  &kp LBKT   &kp RBKT  &kp EQUAL        &none      &kp N1  &kp N2  &kp N3  &none       &none
-                                    &tog 2  &kp SPACE  &kp BSPC        &kp TAB  &kp ENTER  &kp N0
+                               &tog 2  &kp SPACE  &mt LCMD BSPC        &kp TAB  &kp ENTER  &kp N0
             >;
         };
 
