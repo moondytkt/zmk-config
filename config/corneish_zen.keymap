@@ -8,10 +8,11 @@
 // Layers
 #define BASE 0
 #define WIN 1
-#define NMBRS 2
-#define MEDIA 3
-#define CS 4
-#define STTG 5
+#define NMBPD 2
+#define NMSYM 3
+#define MEDIA 4
+#define CS 5
+#define STTG 6
 
 / {
     chosen {
@@ -30,23 +31,17 @@
 / {
     combos {
         compatible = "zmk,combos";
-                     
-        combo_CAPS {
+
+        combo_WIN {
             timeout-ms = <50>;
-            key-positions = <16 19>;
-            bindings = <&kp CAPSLOCK>;
-                     };
-                     
-        combo_SEC {
-            timeout-ms = <50>;
-            key-positions = <1 10>;
-            bindings = <&kp RA(NUMBER_6)>;
-                       };     
-                     
-        combo_COPYPASTEbase {
+            key-positions = <5 6>;
+            bindings = <&tog 1>;
+                       };
+
+        combo_COPYPASTEmac {
             timeout-ms = <50>;
             key-positions = <15 16>;
-            layers = <0>;
+            layers = <0 2 3 4>;
             bindings = <&mt LG(V) LG(C)>;
                      };  
                      
@@ -56,52 +51,60 @@
             layers = <1>;
             bindings = <&mt LC(V) LC(C)>;
                      };
-                       
-        combo_WIN {
-            timeout-ms = <50>;
-            key-positions = <5 6>;
-            bindings = <&tog 1>;
-                       };
                       
         combo_CSGO {
             timeout-ms = <50>;
             key-positions = <14 27>;
             bindings = <&tog 4>;
                        };
-                       
-        combo_STTG {
-            timeout-ms = <50>;
-            key-positions = <6 7 8>;
-            bindings = <&tog 5>;
-                       };
-
-        combo_DEL {
-            timeout-ms = <50>;
-            key-positions = <13 2>;
-            bindings = <&kp DEL>;
-                       };
-                       
-        //Placeholder for key-positions = <13 14>;                     
-                       
-        combo_ToggleMEDleft {
-            timeout-ms = <50>;
-            key-positions = <14 25>;
+                     
+        combo_ToggleNSleft {
+            timeout-ms = <30>;
+            key-positions = <13 14>;
             bindings = <&mo 3>;
                      };
-                       
-        combo_EQUALMINUS {
-            timeout-ms = <50>;
-            key-positions = <9 22>;
-            bindings = <&mt EQUAL MINUS>;
+                     
+        combo_DEL {
+            timeout-ms = <30>;
+            key-positions = <14 15>;
+            bindings = <&kp DEL>;
                        };
-                     
-        //Placeholder for key-positions = <21 22>;                     
-                     
-        combo_ToggleNUM2right {
+                                              
+        combo_ToggleMEDleft {
             timeout-ms = <50>;
-            key-positions = <21 34>;
-            bindings = <&mo 2>;
+            key-positions = <16 17>;
+            bindings = <&mo 4>;
                      };
+                     
+        combo_STTG {
+            timeout-ms = <50>;
+            key-positions = <8 9 10>;
+            bindings = <&tog 5>;
+                       };
+                                          
+        combo_ToggleMEDright {
+            timeout-ms = <50>;
+            key-positions = <18 19>;
+            bindings = <&mo 4>;
+                     };
+                     
+        combo_CAPS {
+            timeout-ms = <40>;
+            key-positions = <19 20>;
+            bindings = <&kp CAPSLOCK>;
+                     };
+                     
+        combo_SEC {
+            timeout-ms = <40>;
+            key-positions = <20 21>;
+            bindings = <&kp RA(NUMBER_6)>;
+                       };     
+                     
+        combo_ToggleNSright {
+            timeout-ms = <50>;
+            key-positions = <21 22>;
+            bindings = <&mo 3>;
+                     };  
            };
     };
 
@@ -121,17 +124,17 @@ base_layer {
             label = "BASE";
 
             // _____________________________________   _____________________________________
-            // |     |Q (1)|W (2)|E (3)|R (4)|T (5)|   |Y (6)|U (7)|I (8)|O (9)|P (0)|     |
+            // |     |(`) Q|  W  |  E  |  R  |  T  |   |  Y  |  U  |  I  | O(-)| P(=)|     |
             // |     |  A  |  S  |  D  |  F  |  G  |   |H (F)|  J  |  K  |  L  |; (')|     |
             // |     |Z SFT|  X  |  C  |  V  |  B  |   |N (S)|  M  |  ,  |  .  |/ SFT|     |
-            //                   |NUM2 | SPC | BSPC|   | TAB | ENT | MED2|
+            //                   |NUMPD| SPC | BSPC|   | TAB | ENT | MED |
             //                          (ESC) (LCMD)   (RALT)(RCTRL)
             
             bindings = <
-  &none     &mt N1 Q     &mt N2 W  &mt N3 E  &mt N4 R  &mt N5 T       &mt N6 Y         &mt N7 U  &mt N8 I   &mt N9 O &mt N0 P           &none
-  &none     &kp A        &kp S     &kp D     &kp F     &kp G          &mt LG(F) H      &kp J     &kp K      &kp L    &mt SEMI SQT       &none
-  &none     &mt LSHFT Z  &kp X     &kp C     &kp V     &kp B          &mt RA(RC(S)) N  &kp M     &kp COMMA  &kp DOT  &mt RSHFT FSLH     &none
-                            &mo 2  &mt ESC SPACE  &mt LCMD BSPC       &mt RALT TAB  &mt RCTRL ENTER  &mo 3
+  &none     &mt GRAVE Q  &kp W  &kp E  &kp R  &kp T       &kp Y            &kp U  &kp I      &mt MINUS O  &mt EQUAL P        &none
+  &none     &kp A        &kp S  &kp D  &kp F  &kp G       &mt LG(F) H      &kp J  &kp K      &kp L        &mt SEMI SQT       &none
+  &none     &mt LSHFT Z  &kp X  &kp C  &kp V  &kp B       &mt RA(RC(S)) N  &kp M  &kp COMMA  &kp DOT      &mt RSHFT FSLH     &none
+                &mo 2  &mt ESC SPACE  &mt LCMD BSPC       &mt RALT TAB  &mt RCTRL ENTER  &mo 4
             >;
         };
 
@@ -139,22 +142,22 @@ win_layer {
             label = "WIN";
 
             // _____________________________________   _____________________________________
-            // |     |Q (1)|W (2)|E (3)|R (4)|T (5)|   |Y (6)|U (7)|I (8)|O (9)|P (0)|     |
+            // |     |(`) Q|  W  |  E  |  R  |  T  |   |  Y  |  U  |  I  |  O  |  P  |     |
             // |     |  A  |  S  |  D  |  F  |  G  |   |H (F)|  J  |  K  |  L  |; (')|     |
             // |     |Z(LT)|X(DN)|C(RT)|  V  |  B  |   |  N  |  M  |  ,  |  .  |  /  |     |
-            //                   | NUM | SPC |BSPC |   | TAB | ENT | SYM |
+            //                   |NUMPD| SPC |BSPC |   | TAB | ENT | MED |
             //                          (ESC) (LCTRL)   (RALT)(RCTRL)
             
             bindings = <
-  &none      &mt N1 Q     &mt N2 W  &mt N3 E  &mt N4 R  &mt N5 T        &mt N6 Y     &mt N7 U  &mt N8 I   &mt N9 O  &mt N0 P            &none
-  &none      &kp A        &kp S     &kp D     &kp F     &kp G           &mt LC(F) H  &kp J     &kp K      &kp L     &mt SEMI SQT        &none
-  &none      &mt LSHFT Z  &kp X     &kp C     &kp V     &kp B           &kp N        &kp M     &kp COMMA  &kp DOT   &mt RSHFT FSLH      &none
-                            &mo 2  &mt ESC SPACE  &mt LCTRL BSPC        &mt RALT TAB &mt RCTRL ENTER  &mo 3
+  &none      &mt GRAVE Q   &kp W     &kp E     &kp R     &kp T           &kp Y        &kp U     &kp I      &kp O     &kp P               &none
+  &none      &kp A         &kp S     &kp D     &kp F     &kp G           &mt LC(F) H  &kp J     &kp K      &kp L     &mt SEMI SQT        &none
+  &none      &mt LSHFT Z   &kp X     &kp C     &kp V     &kp B           &kp N        &kp M     &kp COMMA  &kp DOT   &mt RSHFT FSLH      &none
+                          &mo 2  &mt ESC SPACE  &mt LCTRL BSPC          &mt RALT TAB &mt RCTRL ENTER  &mo 3
             >;
         };
 
-number_layer {
-            label = "NMBRS";
+numpad_layer {
+            label = "NMBPD";
 
             // _____________________________________   _____________________________________
             // |     |LCTRL|     |  {  |  }  |  +  |   |  -  |  7  |  8  |  9  |     |     |
@@ -170,21 +173,38 @@ number_layer {
                                &tog 2  &kp SPACE  &mt LCMD BSPC        &kp TAB  &kp ENTER  &kp N0
             >;
         };
+        
+        numbers_layer {
+            label = "NMSYM";
+
+            // _____________________________________   _____________________________________
+            // |     |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  |     |
+            // |     |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  |     |
+            // |     |     |     |     |     |     |   |     |     |     |     |     |     |
+            //                   |     |     |     |   |     |     |     |
+
+            bindings = <
+&none      &kp EXCL  &kp AT  &kp HASH  &kp DLLR  &kp PRCNT       &kp CARET  &kp AMPS  &kp STAR  &kp LPAR  &kp RPAR      &none
+&none      &kp N1    &kp N2  &kp N3    &kp N4    &kp N5          &kp N6     &kp N7    &kp N8    &kp N9    &kp N0        &none
+&none      &none     &none   &none     &none     &none           &none      &none     &none     &none     &none         &none
+                                   &none     &none   &none       &none     &none   &none
+            >;
+        };
 
         media_layer {
             label = "MEDIA";
 
             // _____________________________________   _____________________________________
             // |     |     |     |     |     |     |   |VOLUP|briUP|     |  O  |     |     |
-            // |     |     |     |  UP |     |     |   |VOLDN|briDN| p_p | MEGA|     |     |
+            // |     |     |     |  UP |     |     |   |VOLDN|briDN|     | MEGA|     |     |
             // |     |     | LEFT| DOWN|RIGHT|     |   |VMUTE|     |     |     |     |     |
-            //                   |SUPER| MEH | CMD |   |     | ENT | MED|
+            //                   |SUPER| MEH | CMD |   | p_p | ENT | MED |
 
             bindings = <
-&none      &none  &none     &none     &none      &none          &kp C_VOL_UP  &kp C_BRIGHTNESS_INC  &none     &kp O                 &none      &none
-&none      &none  &none     &kp UP    &none      &none          &kp C_VOL_DN  &kp C_BRIGHTNESS_DEC  &kp C_PP  &kp RA(RS(RA(RCMD)))  &none      &none
-&none      &none  &kp LEFT  &kp DOWN  &kp RIGHT  &none          &kp C_MUTE    &none                 &none     &none                 &none      &none
-            &kp RA(RS(RCTRL))  &kp RA(RCTRL)  &kp LCMD          &none  &kp ENTER  &tog 3
+&none      &none  &none     &none     &none      &none          &kp C_VOL_UP  &kp C_BRIGHTNESS_INC  &none  &kp O                 &none      &none
+&none      &none  &none     &kp UP    &none      &none          &kp C_VOL_DN  &kp C_BRIGHTNESS_DEC  &none  &kp RA(RS(RA(RCMD)))  &none      &none
+&none      &none  &kp LEFT  &kp DOWN  &kp RIGHT  &none          &kp C_MUTE    &none                 &none  &none                 &none      &none
+            &kp RA(RS(RCTRL))  &kp RA(RCTRL)  &kp LCMD          &kp C_PP  &kp ENTER  &tog 3
             >;
         };
 
