@@ -67,7 +67,7 @@
         combo_DEL {
             timeout-ms = <30>;
             key-positions = <14 15>;
-            bindings = <&kp RG(RS(N4));
+            bindings = <&kp RG(RS(NUMBER_4))>;
                        };
                                               
         combo_ToggleMEDleft {
