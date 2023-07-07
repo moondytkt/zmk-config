@@ -65,7 +65,7 @@
             bindings = <&kp LCMD>;
                      };
 
-        combo_SNAP {
+        combo_SNAPSHOT {
             timeout-ms = <50>;
             key-positions = <11 23 35>;
             bindings = <&kp LG(LS(NUMBER_4))>;
@@ -143,15 +143,15 @@ base_layer {
 
             // _____________________________________   _____________________________________
             // |     |Q (`)|  W  |  E  |  R  |  T  |   |  Y  |  U  |  I  | O(-)| P(=)|     |
-            // |     |A DEL|  S  |  D  |  F  |  G  |   |H (F)|  J  |  K  |  L  |; (')|     |
-            // |     |Z SFT|  X  |  C  |  V  |  B  |   |N (S)|  M  |  ,  |  .  |/ SFT|     |
+            // |     |A DEL|  S  |  D  |  F  |  G  |   |H (F)|  J  |  K  |  L  |' (;)|     |
+            // |     |SFT Z|  X  |  C  |  V  |  B  |   |N (S)|  M  |  ,  |  .  |SFT /|     |
             //                   | ESC | SPC | BSPC|   | TAB | ENT | MED |
             //                                (LCMD)   (RALT)(RCTRL)
             
             bindings = <
-  &none      &mt GRAVE Q  &kp W  &kp E  &kp R  &kp T        &kp Y            &kp U  &kp I      &mt MINUS O  &mt EQUAL P         &none
-  &none      &mt DEL A    &kp S  &kp D  &kp F  &kp G        &mt LG(F) H      &kp J  &kp K      &kp L        &mt SQT SEMI        &none
-  &none      &mt LSHFT Z  &kp X  &kp C  &kp V  &kp B        &mt RA(RC(S)) N  &kp M  &kp COMMA  &kp DOT      &mt RSHFT FSLH      &none
+  &none      &mt GRAVE Q  &kp W  &kp E  &kp R  &kp T        &kp Y            &kp U  &kp I      &mt MINUS O  &mt EQUAL P         &kp C_VOL_UP
+  &none      &mt DEL A    &kp S  &kp D  &kp F  &kp G        &mt LG(F) H      &kp J  &kp K      &kp L        &mt SEMI SQT        &kp C_VOL_DN
+  &none      &mt Z LSHFT  &kp X  &kp C  &kp V  &kp B        &mt RA(RC(S)) N  &kp M  &kp COMMA  &kp DOT      &mt FSLH RSHFT      &kp C_PP
                    &kp ESC  &kp SPACE  &mt LCMD BSPC        &mt RALT TAB  &mt RCTRL ENTER  &mo 4
             >;
         };
@@ -161,15 +161,15 @@ win_layer {
 
             // _____________________________________   _____________________________________
             // |     |Q (`)|  W  |  E  |  R  |  T  |   |  Y  |  U  |  I  |O (-)|P (=)|     |
-            // |     |A DEL|  S  |  D  |  F  |  G  |   |H (F)|  J  |  K  |  L  |; (')|     |
-            // |     |Z SFT|  X  |  C  |  V  |  B  |   |  N  |  M  |  ,  |  .  |  /  |     |
+            // |     |A DEL|  S  |  D  |  F  |  G  |   |H (F)|  J  |  K  |  L  |' (;)|     |
+            // |     |SFT Z|  X  |  C  |  V  |  B  |   |  N  |  M  |  ,  |  .  |SFT /|     |
             //                   | ESC | SPC |BSPC |   | TAB | ENT | MED |
             //                              (LCTRL)   (RALT)(RCTRL)
             
             bindings = <
   &none      &mt GRAVE Q   &kp W     &kp E     &kp R     &kp T           &kp Y        &kp U     &kp I      &mt MINUS O  &mt EQUAL P         &none
-  &none      &mt DEL A     &kp S     &kp D     &kp F     &kp G           &mt LC(F) H  &kp J     &kp K      &kp L        &mt SQT SEMI        &none
-  &none      &mt LSHFT Z   &kp X     &kp C     &kp V     &kp B           &kp N        &kp M     &kp COMMA  &kp DOT      &mt RSHFT FSLH      &none
+  &none      &mt DEL A     &kp S     &kp D     &kp F     &kp G           &mt LC(F) H  &kp J     &kp K      &kp L        &mt SEMI SQT        &none
+  &none      &mt Z LSHFT   &kp X     &kp C     &kp V     &kp B           &kp N        &kp M     &kp COMMA  &kp DOT      &mt FSLH RSHFT      &none
                             &kp ESC  &kp SPACE  &mt LCTRL BSPC           &mt RALT TAB &mt RCTRL ENTER  &mo 4
             >;
         };
