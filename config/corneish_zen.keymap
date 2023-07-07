@@ -65,7 +65,7 @@
             bindings = <&kp LCMD>;
                      };
 
-        combo_screenshot {
+        combo_SNAP {
             timeout-ms = <50>;
             key-positions = <11 23 35>;
             bindings = <&kp LG(LS(NUMBER_4))>;
@@ -73,13 +73,13 @@
 
 //Regular Combinations on the left
                      
-        combo_NUMSYM {
+        combo_NMSYMleft {
             timeout-ms = <50>;
             key-positions = <13 14>;
             bindings = <&mo 3>;
                      };
 
-        combo_NMBPD {
+        combo_NMBPDleft {
             timeout-ms = <50>;
             key-positions = <15 16>;
             bindings = <&mo 2>;
@@ -101,14 +101,14 @@
 
 //Regular Combinations on the right
 
-        combo_NUMSYM {
+        combo_NMSYMright {
             timeout-ms = <50>;
             key-positions = <21 22>;
             layers = <0 1>;
             bindings = <&mo 3>;
                      };
 
-        combo_NMBPD {
+        combo_NMBPDright {
             timeout-ms = <50>;
             key-positions = <19 20>;
             layers = <0 1>;
